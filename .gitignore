@@ -1,0 +1,15 @@
+# 数据库文件
+db.sqlite3
+db.sqlite3.backup
+
+# 运行进程与本地配置
+.idea/
+uwsgi.pid
+my.cnf
+
+# 媒体文件
+media/
+
+# Python 缓存文件 (常规忽略)
+__pycache__/
+*.pyc

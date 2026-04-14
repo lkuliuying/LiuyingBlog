@@ -1,0 +1,277 @@
+{% extends "base.html" %}
+{% load comment_tags %}
+
+{% block title %}博客详情{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'highlight/styles/github-dark.min.css' %}">
+    <script src="{% static 'highlight/highlight.min.js' %}"></script>
+    <style>
+        .reply-form-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
+        }
+        .reply-form-wrapper.active {
+            max-height: 200px;
+            opacity: 1;
+            margin-top: 8px;
+        }
+    </style>
+{% endblock %}
+
+{% block main %}
+    <h1>{{ blog.title }}</h1>
+    <hr>
+    <div class="mt-2">
+        <img src="{% static 'image/liuying.jpg' %}" alt="head" class="rounded-circle" width="30px" height="30px">
+        <span class="ms-2">{{ blog.author.username }}</span>
+        <span class="ms-2">于</span>
+        <span class="ms-2">{{ blog.pub_time|date:'Y年m月d日 H时i分s秒' }}</span>发布
+    </div>
+    <hr>
+    <div class="py-2">
+        {{ blog.content|safe }}
+    </div>
+
+    <div class="my-5 d-flex gap-3 justify-content-center align-items-center">
+        <input type="hidden" id="csrf_token_for_fetch" value="{{ csrf_token }}">
+        
+        <button id="like-btn" data-id="{{ blog.id }}" 
+                class="btn {% if user in blog.likes.all %}btn-primary{% else %}btn-outline-primary{% endif %} rounded-pill px-4 shadow-sm"
+                style="transition: all 0.3s ease;">
+            <span id="like-icon">{% if user in blog.likes.all %}💖 已赞{% else %}🤍 赞{% endif %}</span> 
+            <span id="like-count" class="badge bg-light text-dark ms-2">{{ blog.total_likes }}</span>
+        </button>
+
+        <button id="collect-btn" data-id="{{ blog.id }}" 
+                class="btn {% if user in blog.collections.all %}btn-primary{% else %}btn-outline-primary{% endif %} rounded-pill px-4 shadow-sm"
+                style="transition: all 0.3s ease;">
+            <span id="collect-icon">{% if user in blog.collections.all %}⭐ 已收藏{% else %}☆ 收藏{% endif %}</span> 
+            <span id="collect-count" class="badge bg-light text-dark ms-2">{{ blog.total_collections }}</span>
+        </button>
+    </div>
+    <hr>
+    <div class="mt-2">
+        <h3>评论({{ blog.comments.count }})</h3>
+        <form action="{% url 'blog:pub_comment' %}" method="post" id="topCommentForm">
+            {% csrf_token %}
+            <input type="hidden" name="blog_id" value="{{ blog.id }}">
+            <input type="hidden" name="parent_id" value="">
+            <div class="mb-2">
+                <textarea class="form-control" placeholder="请输入评论" name="comment"
+                          rows="2" style="resize:none;"></textarea>
+            </div>
+            <div class="text-end mt-2">
+                <button type="submit" class="btn btn-primary btn-sm">发表评论</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="mt-3">
+        {% render_comment_tree blog.comments.all %}
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            hljs.highlightAll();
+
+            // 👇 新增：点赞功能的 Fetch API 逻辑 👇
+            const likeBtn = document.getElementById('like-btn');
+            if (likeBtn) {
+                likeBtn.addEventListener('click', function() {
+                    const blogId = this.dataset.id;
+                    const csrfToken = document.getElementById('csrf_token_for_fetch').value;
+
+                    fetch(`/blog/${blogId}/like/`, {
+                        method: 'POST',
+                        headers: {
+                            'X-CSRFToken': csrfToken,
+                            'Content-Type': 'application/json',
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    })
+                    .then(response => {
+                        // 如果后端返回 403，说明没登录
+                        if (response.status === 403 || response.status === 401) {
+                            alert('请先登录后再进行点赞！');
+                            window.location.href = "{% url 'liuyingauth:login' %}"; // 跳转到登录页
+                            return null;
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data && data.status === 'success') {
+                            // 更新数量
+                            document.getElementById('like-count').innerText = data.total_likes;
+                            
+                            // 切换按钮的薄荷绿样式
+                            if (data.is_liked) {
+                                likeBtn.classList.remove('btn-outline-primary');
+                                likeBtn.classList.add('btn-primary');
+                                document.getElementById('like-icon').innerText = '💖 已赞';
+                            } else {
+                                likeBtn.classList.remove('btn-primary');
+                                likeBtn.classList.add('btn-outline-primary');
+                                document.getElementById('like-icon').innerText = '🤍 赞';
+                            }
+                        }
+                    })
+                    .catch(error => console.error('点赞请求失败:', error));
+                });
+            }
+            // 👆 新增结束 👆
+
+            let activeReplyWrapper = null;
+
+            // ... 以下是你原本的点击「回复」和「取消」的代码，保持不变即可 ...
+            document.addEventListener('click', function (e) {
+                const btn = e.target.closest('.reply-btn');
+                if (!btn) return;
+
+                const commentId = btn.dataset.commentId;
+                const parentUsername = btn.dataset.parentUsername;
+                const commentNode = btn.closest('.comment-node');
+
+                const existing = commentNode.querySelector('.reply-form-wrapper.active');
+                if (existing) {
+                    existing.classList.remove('active');
+                    activeReplyWrapper = null;
+                    return;
+                }
+
+                if (activeReplyWrapper) {
+                    activeReplyWrapper.classList.remove('active');
+                }
+
+                let wrapper = commentNode.querySelector('.reply-form-wrapper');
+                if (!wrapper) {
+                    wrapper = document.createElement('div');
+                    wrapper.className = 'reply-form-wrapper';
+                    wrapper.innerHTML = `
+                        <form action="{% url 'blog:pub_comment' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="blog_id" value="{{ blog.id }}">
+                            <input type="hidden" name="parent_id" value="${commentId}">
+                            <div class="d-flex gap-2 align-items-start">
+                                <textarea class="form-control form-control-sm" name="comment"
+                                          rows="1" placeholder="回复 @${parentUsername}"
+                                          style="resize:none;"></textarea>
+                                <button type="submit" class="btn btn-primary btn-sm flex-shrink-0">回复</button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm flex-shrink-0 cancel-reply-btn">取消</button>
+                            </div>
+                        </form>
+                    `;
+                    commentNode.appendChild(wrapper);
+                }
+
+                requestAnimationFrame(() => {
+                    wrapper.classList.add('active');
+                    wrapper.querySelector('textarea').focus();
+                });
+                activeReplyWrapper = wrapper;
+            });
+
+            document.addEventListener('click', function (e) {
+                if (e.target.closest('.cancel-reply-btn')) {
+                    const wrapper = e.target.closest('.reply-form-wrapper');
+                    if (wrapper) {
+                        wrapper.classList.remove('active');
+                        if (activeReplyWrapper === wrapper) activeReplyWrapper = null;
+                    }
+                }
+            });
+        });
+        const collectBtn = document.getElementById('collect-btn');
+            if (collectBtn) {
+                collectBtn.addEventListener('click', function() {
+                    const blogId = this.dataset.id;
+                    const csrfToken = document.getElementById('csrf_token_for_fetch').value;
+
+                    fetch(`/blog/${blogId}/collect/`, {
+                        method: 'POST',
+                        headers: {
+                            'X-CSRFToken': csrfToken,
+                            'Content-Type': 'application/json',
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    })
+                    .then(response => {
+                        if (response.status === 403 || response.status === 401) {
+                            alert('请先登录后再进行收藏！');
+                            window.location.href = "{% url 'liuyingauth:login' %}";
+                            return null;
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data && data.status === 'success') {
+                            // 更新数量
+                            document.getElementById('collect-count').innerText = data.total_collections;
+                            
+                            // 切换按钮的薄荷绿样式
+                            if (data.is_collected) {
+                                collectBtn.classList.remove('btn-outline-primary');
+                                collectBtn.classList.add('btn-primary');
+                                document.getElementById('collect-icon').innerText = '⭐ 已收藏';
+                            } else {
+                                collectBtn.classList.remove('btn-primary');
+                                collectBtn.classList.add('btn-outline-primary');
+                                document.getElementById('collect-icon').innerText = '☆ 收藏';
+                            }
+                        }
+                    })
+                    .catch(error => console.error('收藏请求失败:', error));
+                });
+            }
+            // 👇 新增：评论点赞功能的 Fetch API 逻辑 (使用事件委托) 👇
+            document.addEventListener('click', function (e) {
+                // 判断点击的是不是评论的点赞按钮 (或者是按钮内部的图标/文字)
+                const btn = e.target.closest('.comment-like-btn');
+                if (!btn) return; // 如果不是，直接退出不处理
+
+                const commentId = btn.dataset.id;
+                // 复用你之前放在页面里的那个隐藏的 CSRF token
+                const csrfToken = document.getElementById('csrf_token_for_fetch').value;
+
+                fetch(`/comment/${commentId}/like/`, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': csrfToken,
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                })
+                .then(response => {
+                    if (response.status === 403 || response.status === 401) {
+                        alert('请先登录后再点赞评论！');
+                        window.location.href = "{% url 'liuyingauth:login' %}";
+                        return null;
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data && data.status === 'success') {
+                        // 更新数量
+                        btn.querySelector('.comment-like-count').innerText = data.total_likes;
+                        
+                        // 切换我们设计的薄荷绿样式
+                        const iconSpan = btn.querySelector('.comment-like-icon');
+                        if (data.is_liked) {
+                            btn.style.color = 'var(--primary-mint)';
+                            iconSpan.innerText = '💖';
+                        } else {
+                            btn.style.color = 'var(--font-color-sub)';
+                            iconSpan.innerText = '🤍';
+                        }
+                    }
+                })
+                .catch(error => console.error('评论点赞请求失败:', error));
+            });
+            // 👆 新增结束 👆
+            
+    </script>
+{% endblock %}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %} - 流萤博客</title>
+    <link rel="stylesheet" href="{% static 'bootstrap5/bootstrap.min.css' %}">
+    <script src="{% static 'bootstrap5/popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap5/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+
+<header class="p-3 text-bg-light custom-header sticky-top">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none me-4">
+                <img src="{% static 'image/logo.png' %}" alt="logo" width="100" height="40" class="rounded">
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 fw-medium">
+                <li><a href="/" class="nav-link px-3 link-dark">首页</a></li>
+                <li><a href="{% url 'blog:pub_blog' %}" class="nav-link px-3 link-secondary">发布博客</a></li>
+            </ul>
+
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" action="{% url 'blog:search' %}" method="get">
+                <input type="search" name="q" class="form-control rounded-pill px-3" placeholder="搜索文章..." aria-label="Search">
+            </form>
+            
+            {% if user.is_authenticated %}
+            <div class="dropdown text-end d-flex align-items-center gap-2">
+                <a href="{% url 'liuyingauth:profile' %}" class="d-flex align-items-center gap-2 text-decoration-none">
+                    <img src="{% static 'image/liuying.jpg' %}" alt="用户头像" width="36" height="36" class="rounded-circle shadow-sm">
+                    <span class="link-dark fw-medium">{{ user.username }}</span>
+                </a>
+                <a href="#" class="dropdown-toggle link-dark text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false"></a>
+                <ul class="dropdown-menu dropdown-menu-end text-small shadow border-0 mt-2">
+                    <li><span class="dropdown-item-text text-muted">欢迎回来</span></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item text-danger" href="{% url 'liuyingauth:logout' %}">退出登录</a></li>
+                </ul>
+            </div>
+            {% else %}
+            <div class="text-end">
+                <a href="{% url 'liuyingauth:login' %}" class="btn btn-outline-primary rounded-pill px-4 me-2">登录</a>
+                <a href="{% url 'liuyingauth:register' %}" class="btn btn-primary rounded-pill px-4">注册</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</header>
+
+<main class="container bg-white main-container">
+    {% block main %}{% endblock %}
+</main>
+
+<footer class="text-center text-muted py-4">
+    <div class="container">
+        <small>&copy; 2026 流萤博客. All rights reserved.</small>
+    </div>
+</footer>
+
+{% block script %}{% endblock %}
+</body>
+</html>

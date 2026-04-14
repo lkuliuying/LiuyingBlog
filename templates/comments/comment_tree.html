@@ -1,0 +1,48 @@
+{% load comment_tags %}
+
+{% for node in tree %}
+<div class="comment-node mb-3" id="comment-{{ node.comment.id }}">
+    <div class="d-flex gap-2">
+        <img src="{% static 'image/liuying.jpg' %}" alt="head"
+             class="rounded-circle flex-shrink-0" width="36px" height="36px">
+        <div class="flex-grow-1">
+            <div class="d-flex justify-content-between text-body-tertiary small">
+                <span>{{ node.comment.author.username }}</span>
+                <span>{{ node.comment.pub_time|date:'Y年m月d日 H:i' }}</span>
+            </div>
+
+            {% if node.comment.parent %}
+            <div class="small text-body-secondary mb-1">
+                回复 <span class="text-primary fw-semibold">@{{ node.comment.parent.author.username }}</span>
+            </div>
+            {% endif %}
+
+            <div class="mt-1">{{ node.comment.content }}</div>
+
+            <div class="d-flex align-items-center gap-3 mt-2">
+                
+                <button type="button" class="btn btn-sm btn-link text-decoration-none comment-like-btn p-0" 
+                        data-id="{{ node.comment.id }}" 
+                        style="color: {% if user in node.comment.likes.all %}var(--primary-mint){% else %}var(--font-color-sub){% endif %}; transition: color 0.2s;">
+                    <span class="comment-like-icon">{% if user in node.comment.likes.all %}💖{% else %}🤍{% endif %}</span>
+                    <span class="comment-like-count ms-1">{{ node.comment.total_likes }}</span>
+                </button>
+
+                <button type="button"
+                        class="btn btn-sm btn-link p-0 text-decoration-none reply-btn text-body-secondary"
+                        data-comment-id="{{ node.comment.id }}"
+                        data-parent-username="{{ node.comment.author.username }}">
+                    回复
+                </button>
+                
+            </div>
+            </div>
+    </div>
+
+    {% if node.children %}
+    <div class="ms-5 mt-2 ps-3" style="border-left: 2px solid #dee2e6;">
+        {% render_comment_tree node.children %}
+    </div>
+    {% endif %}
+</div>
+{% endfor %}

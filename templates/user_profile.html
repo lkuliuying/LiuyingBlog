@@ -1,0 +1,277 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}个人中心{% endblock %}
+
+{% block main %}
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 mb-4 text-center">
+                <div class="card-body py-5">
+                    <div class="position-relative d-inline-block mb-3" id="avatar-wrapper" style="cursor: pointer;">
+                        <img src="{% if user.profile.avatar %}{{ user.profile.avatar.url }}{% else %}{% static 'image/liuying.jpg' %}{% endif %}" 
+                             alt="头像" class="rounded-circle border p-1" width="100" height="100" id="user-avatar">
+                        <div class="position-absolute bottom-0 end-0 bg-primary text-white rounded-circle d-flex align-items-center justify-content-center shadow" 
+                             style="width: 32px; height: 32px;">
+                            <i class="bi bi-camera-fill" style="font-size: 14px;"></i>
+                        </div>
+                        <input type="file" id="avatar-input" accept="image/*" style="display: none;">
+                    </div>
+                    
+                    <h4 class="mb-1 fw-bold" id="top-username">{{ user.username }}</h4>
+                    <p class="text-muted small" id="top-email">
+                        <i class="bi bi-envelope me-1"></i>{% if user.email %}{{ user.email }}{% else %}未设置邮箱{% endif %}
+                    </p>
+                    <div class="d-flex justify-content-center gap-3 mt-3">
+                        <div class="text-center">
+                            <div class="fw-bold">{{ user_blogs.count }}</div>
+                            <small class="text-muted">博客</small>
+                        </div>
+                        <div class="vr"></div>
+                        <div class="text-center">
+                            <div class="fw-bold">{{ user_comments.count }}</div>
+                            <small class="text-muted">评论</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list-group shadow-sm border-0 mb-4 nav nav-pills flex-column" id="v-pills-tab" role="tablist">
+                <button class="list-group-item list-group-item-action active border-0 py-3" id="pills-blogs-tab" data-bs-toggle="pill" data-bs-target="#pills-blogs" type="button">
+                    <i class="bi bi-file-post me-2"></i>我发布的
+                </button>
+                <button class="list-group-item list-group-item-action border-0 py-3" id="pills-comments-tab" data-bs-toggle="pill" data-bs-target="#pills-comments" type="button">
+                    <i class="bi bi-chat-dots me-2"></i>我的评论
+                </button>
+                <button class="list-group-item list-group-item-action border-0 py-3" id="pills-likes-tab" data-bs-toggle="pill" data-bs-target="#pills-likes" type="button">
+                    <i class="bi bi-heart-fill me-2 text-danger"></i>我的点赞
+                </button>
+                <button class="list-group-item list-group-item-action border-0 py-3" id="pills-collections-tab" data-bs-toggle="pill" data-bs-target="#pills-collections" type="button">
+                    <i class="bi bi-star-fill me-2 text-warning"></i>我的收藏
+                </button>
+                <button class="list-group-item list-group-item-action border-0 py-3" id="pills-settings-tab" data-bs-toggle="pill" data-bs-target="#pills-settings" type="button">
+                    <i class="bi bi-gear-fill me-2"></i>账号设置
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="tab-content border-0 shadow-sm rounded-3 bg-white p-4" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-blogs" role="tabpanel">
+                    <h5 class="mb-4 fw-bold">我发布的博客</h5>
+                    {% if user_blogs %}
+                        {% for blog in user_blogs %}
+                        <div class="d-flex align-items-center justify-content-between p-3 mb-2 border rounded hover-bg-light">
+                            <a href="{% url 'blog:blog_detail' blog.id %}" class="text-decoration-none text-dark fw-semibold">{{ blog.title }}</a>
+                            <small class="text-muted">{{ blog.pub_time|date:"Y-m-d" }}</small>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="text-center py-5 text-muted">还没有发布过任何博客</div>
+                    {% endif %}
+                </div>
+
+                <div class="tab-pane fade" id="pills-comments" role="tabpanel">
+                    <h5 class="mb-4 fw-bold">我的评论记录</h5>
+                    {% if user_comments %}
+                        {% for comment in user_comments %}
+                        <div class="mb-3 p-3 border-start border-4 border-info bg-light rounded">
+                            <div class="small mb-1">
+                                评论于：<a href="{% url 'blog:blog_detail' comment.blog_id %}" class="text-primary text-decoration-none fw-bold">《{{ comment.blog.title }}》</a>
+                            </div>
+                            <p class="mb-1">{{ comment.content }}</p>
+                            <small class="text-muted">{{ comment.pub_time|date:"Y-m-d H:i" }}</small>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="text-center py-5 text-muted">还没有发表过评论</div>
+                    {% endif %}
+                </div>
+
+                <div class="tab-pane fade" id="pills-likes" role="tabpanel">
+                    <h5 class="mb-4 fw-bold">点赞过的帖子</h5>
+                    {% if liked_blogs %}
+                        {% for blog in liked_blogs %}
+                        <div class="d-flex align-items-center justify-content-between p-3 mb-2 border rounded">
+                            <a href="{% url 'blog:blog_detail' blog.id %}" class="text-decoration-none text-dark">{{ blog.title }}</a>
+                            <span class="badge bg-danger-subtle text-danger rounded-pill">💖 {{ blog.total_likes }}</span>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="text-center py-5 text-muted">暂无点赞帖子</div>
+                    {% endif %}
+                </div>
+
+                <div class="tab-pane fade" id="pills-collections" role="tabpanel">
+                    <h5 class="mb-4 fw-bold">收藏的文章</h5>
+                    {% if collected_blogs %}
+                        {% for blog in collected_blogs %}
+                        <div class="d-flex align-items-center justify-content-between p-3 mb-2 border rounded">
+                            <div><i class="bi bi-bookmark-fill text-warning me-2"></i><a href="{% url 'blog:blog_detail' blog.id %}" class="text-decoration-none text-dark">{{ blog.title }}</a></div>
+                            <small class="text-muted">作者：{{ blog.author.username }}</small>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="text-center py-5 text-muted">还没有收藏过文章</div>
+                    {% endif %}
+                </div>
+
+                <div class="tab-pane fade" id="pills-settings" role="tabpanel">
+                    <h5 class="mb-4 fw-bold border-bottom pb-2">基本资料</h5>
+                    <form id="info-form" class="mb-5">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">用户名</label>
+                            <input type="text" class="form-control" name="username" value="{{ user.username }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">电子邮箱</label>
+                            <input type="email" class="form-control" name="email" value="{{ user.email }}">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">保存修改</button>
+                    </form>
+
+                    <h5 class="mb-4 fw-bold border-bottom pb-2 text-danger">安全设置</h5>
+                    <form id="password-form">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <input type="password" class="form-control" name="old_password" placeholder="当前密码" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" name="new_password1" placeholder="新密码" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" name="new_password2" placeholder="确认新密码" required>
+                        </div>
+                        <button type="submit" class="btn btn-warning w-100">重置密码</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .hover-bg-light:hover { background-color: #f8f9fa; transition: 0.2s; }
+    .list-group-item.active { background-color: #00c292 !important; border-color: #00c292 !important; color: white !important; font-weight: bold; }
+    .nav-pills .list-group-item { cursor: pointer; border-radius: 8px !important; margin-bottom: 5px; border: 1px solid transparent; }
+    #v-pills-tabContent { min-height: 450px; }
+</style>
+{% endblock %}
+
+{% block script %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("页面已加载，准备初始化 JS 逻辑...");
+
+    // ================= 1. 头像上传逻辑 =================
+    const avatarWrapper = document.getElementById('avatar-wrapper');
+    const avatarInput = document.getElementById('avatar-input');
+    const userAvatar = document.getElementById('user-avatar');
+
+    if (avatarWrapper && avatarInput) {
+        // 点击蓝圈或头像，触发隐藏的文件选择框
+        avatarWrapper.addEventListener('click', function() {
+            console.log("点击了头像区域，正在打开文件选择框...");
+            avatarInput.click();
+        });
+
+        // 选中文件后触发上传
+        avatarInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            console.log("已选择文件:", file.name);
+
+            if (file.size > 2 * 1024 * 1024) {
+                alert('头像图片不能超过 2MB');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('avatar', file);
+
+            // 发送上传请求
+            fetch("{% url 'liuyingauth:upload_avatar' %}", {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}'
+                }
+            })
+            .then(response => response.json())
+            .then(res => {
+                console.log("后端返回响应:", res);
+                if (res.code === 200) {
+                    // 更新图片，后面加时间戳防止浏览器缓存不更新图片
+                    userAvatar.src = res.avatar_url + '?t=' + new Date().getTime();
+                    alert('头像修改成功！');
+                } else {
+                    alert(res.msg || '上传失败');
+                }
+            })
+            .catch(err => {
+                console.error("请求报错:", err);
+                alert('网络错误，上传失败');
+            });
+
+            // 清空 input 方便下次选择同一张图
+            this.value = '';
+        });
+    }
+
+    // ================= 2. 修改基本信息逻辑 =================
+    const infoForm = document.getElementById('info-form');
+    if (infoForm) {
+        infoForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            
+            fetch("{% url 'liuyingauth:update_profile_info' %}", {
+                method: 'POST',
+                body: formData,
+                headers: { 'X-CSRFToken': '{{ csrf_token }}' }
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.code === 200) {
+                    alert(data.msg);
+                    document.getElementById('top-username').innerText = data.new_username;
+                    const emailInput = infoForm.querySelector('input[name="email"]').value;
+                    document.getElementById('top-email').innerHTML = '<i class="bi bi-envelope me-1"></i>' + (emailInput || '未设置邮箱');
+                } else {
+                    alert(data.msg);
+                }
+            })
+            .catch(() => alert('网络错误'));
+        });
+    }
+
+    // ================= 3. 修改密码逻辑 =================
+    const passwordForm = document.getElementById('password-form');
+    if (passwordForm) {
+        passwordForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            
+            fetch("{% url 'liuyingauth:update_password' %}", {
+                method: 'POST',
+                body: formData,
+                headers: { 'X-CSRFToken': '{{ csrf_token }}' }
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.code === 200) {
+                    alert(data.msg);
+                    passwordForm.reset();
+                } else {
+                    alert(data.msg);
+                }
+            })
+            .catch(() => alert('网络错误'));
+        });
+    }
+});
+</script>
+{% endblock %}
