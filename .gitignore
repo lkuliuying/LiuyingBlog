@@ -13,3 +13,6 @@ media/
 # Python 缓存文件 (常规忽略)
 __pycache__/
 *.pyc
+
+# 敏感信息
+.env

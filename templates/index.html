@@ -1,4 +1,5 @@
 {% load static %}
+{% load cache %}
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -53,6 +54,7 @@
 </header>
 
 <main class="container bg-white main-container">
+{% cache 300 index_blog_list %}
 {% if blogs|length == 0 %}
     <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 50vh;">
         <h1 class="text-muted opacity-25" style="font-size: 5rem; color: var(--primary-mint) !important;">📝</h1>
@@ -109,6 +111,7 @@
         {% endfor %}
     </div>
 {% endif %}
+{% endcache %}
 </main>
 
 <footer class="text-center text-muted py-4">
@@ -116,7 +119,6 @@
         <small>&copy; 2026 流萤博客. All rights reserved.</small>
     </div>
 </footer>
-
 {% block script %}{% endblock %}
 </body>
 </html>

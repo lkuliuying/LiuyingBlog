@@ -13,18 +13,17 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
 from django.views.decorators.cache import cache_page
 from django.shortcuts import get_object_or_404
+from django.views.decorators.vary import vary_on_cookie
 
-@cache_page(60 * 5)
+#@vary_on_cookie
+#@cache_page(60 * 5)
 def index(request):
     blogs = Blog.objects.all()
     return render(request, 'index.html', context={'blogs': blogs})
 
 
 def blog_detail(request, blog_id):
-    try:
-        blog = Blog.objects.get(pk=blog_id)
-    except Exception as e:
-        blog = None
+    blog = get_object_or_404(Blog, pk=blog_id)
     return render(request, 'blog_detail.html', context={'blog': blog})
 
 

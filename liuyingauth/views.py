@@ -1,7 +1,9 @@
+from django.utils import timezone
 from django.shortcuts import render, redirect, reverse
 from django.http.response import JsonResponse
 import string
 import random
+import os
 from django.core.mail import send_mail
 from .models import CaptchaModel
 from django.views.decorators.http import require_http_methods,require_POST
@@ -12,6 +14,7 @@ from django.contrib.auth.decorators import login_required
 from blog.models import Blog,BlogComment
 from .models import UserProfile
 from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth import login, logout, get_user_model, authenticate 
 
 
 User=get_user_model()
@@ -24,24 +27,26 @@ def lylogin(request):
 
     form = LoginForm(request.POST)
     if form.is_valid():
-        email = form.cleaned_data.get('email')
+        account = form.cleaned_data.get('email')  # 这里虽然变量叫 email，但实际上用户填邮箱或用户名都可以
         password = form.cleaned_data.get('password')
         remember = request.POST.get('remember')
-        user = User.objects.filter(email=email).first()
+        
+        # ★ 优雅重构：直接把账号密码扔给 Django 的 authenticate 去处理
+        user = authenticate(request, username=account, password=password)
 
-        if user and user.check_password(password):
+        if user is not None:
+            # 认证成功，执行登录
             login(request, user)
-
             if not remember:
                 request.session.set_expiry(0)
             return redirect('/')
         else:
-            messages.error(request, '邮箱或密码错误')
+            messages.error(request, '账号或密码错误') # 提示语改成账号，更严谨
             return render(request, 'login.html', {'form': form})
     else:
-        print(form.errors)
         return render(request, 'login.html', {'form': form})
-
+        
+        
 def lylogout(request):
     logout(request)
     return redirect('/')
@@ -74,22 +79,43 @@ def send_email_captcha(request):
             'code':400,
             'message':'邮箱不能为空'
         })
+        
+    # ★ 防刷限流逻辑：查询数据库中该邮箱最近一次的发送记录
+    captcha_record = CaptchaModel.objects.filter(email=email).first()
+    if captcha_record:
+        # 计算当前时间与上一次发送时间的差值
+        time_diff = timezone.now() - captcha_record.created_time
+        # 如果距离上次发送还不到 60 秒，直接拦截
+        if time_diff.total_seconds() < 60:
+            return JsonResponse({
+                'code': 400,
+                'message': '验证码发送太频繁，请 60 秒后再试'
+            })
+            
     # 生成验证码
     captcha = "".join(random.sample(string.digits, 4))
+    
+    # 存入数据库（update_or_create 会自动更新 created_time）
     CaptchaModel.objects.update_or_create(email=email,defaults={'captcha':captcha})
     #print(captcha)
-    send_mail(
-        subject='流萤博客注册验证码',
-        message='验证码是：%s'%captcha,
-        from_email='3302393536@qq.com',
-        recipient_list=[email],
-    )
-    return JsonResponse({
-        'code':200,
-        'message':'验证码发送成功',
-    })
-
-
+    # 发送邮件
+    try:
+        send_mail(
+            subject='流萤博客注册验证码',
+            message='您的验证码是：%s，有效时间为5分钟。' % captcha,
+            from_email=os.getenv('EMAIL_HOST_USER', '3302393536@qq.com'), # 顺便这里也规范一下
+            recipient_list=[email],
+            fail_silently=False, # 发送失败抛出异常，方便查错
+        )
+        return JsonResponse({
+            'code': 200,
+            'message': '验证码发送成功',
+        })
+    except Exception as e:
+        return JsonResponse({
+            'code': 500,
+            'message': f'邮件发送失败，具体错误：{str(e)}'
+        })
 @login_required
 def user_profile(request):
     # 第94行：查询当前用户发布的博客

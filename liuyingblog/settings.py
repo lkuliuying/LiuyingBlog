@@ -11,20 +11,24 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# 加载根目录的 .env 文件
+load_dotenv(os.path.join(BASE_DIR, '.env'))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-crta3f*(+paen8waudl==d=-3w%_($(av#c&-h#66!p#z-ki82'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'fallback-secret-key-for-local-dev')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DJANGO_DEBUG') == 'True'
 
 ALLOWED_HOSTS = ['43.163.232.238','www.liuying.com','liuying.com','127.0.0.1']
 
@@ -141,7 +145,9 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.qq.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = '3302393536@qq.com'
-EMAIL_HOST_PASSWORD = 'lhgerplmcympdbgf'
+EMAIL_FROM_NAME = '流萤博客'
+# 从环境变量读取邮箱授权码，避免明文硬编码
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
 DEFAULT_FROM_EMAIL = '3302393536@qq.com'
 
 DJANGO_MYSQL_VERSION_CHECK = False
@@ -158,26 +164,27 @@ JAZZMIN_SETTINGS_SHOW_VIEW_ON_SITE = False
 JAZZMIN_SETTINGS_DATETIME_FORMAT = 'Y-m-d H:i'
 
 
-# ==========================================
-# ★ Redis 高级配置区
-# ==========================================
+#==========================================
+#★ Redis 高级配置区
 
-# CACHES = {
-#     "default": {
-#         "BACKEND": "django_redis.cache.RedisCache",
-#         "LOCATION": "redis://127.0.0.1:6379/1",  # 使用 1 号库，避免和其他应用冲突
-#         "OPTIONS": {
-#             "CLIENT_CLASS": "django_redis.client.DefaultClient",
-#             "CONNECTION_KWARGS": {
-#                 "decode_responses": True,  # 自动将字节转成字符串，免去 decode 的烦恼
-#             }
-#         }
-#     }
-# }
+#==========================================
 
-# ★ 将 Session 存储引擎也换成 Redis（企业级标配）
-#SESSION_ENGINE = "django.contrib.sessions.backends.cache"
-#SESSION_CACHE_ALIAS = "default"
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",  # 使用 1 号库，避免和其他应用冲突
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            # "CONNECTION_KWARGS": {
+            #     "decode_responses": True,  # 自动将字节转成字符串，免去 decode 的烦恼
+            # }
+        }
+    }
+}
+
+#★ 将 Session 存储引擎也换成 Redis（企业级标配）
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSION_CACHE_ALIAS = "default"
 
 
 # ==========================================
@@ -191,5 +198,14 @@ REST_FRAMEWORK = {
     # 开启自动接口文档（极其重要！）
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.AutoSchema',
 }
+
+
+# ==========================================
+# ★ 自定义认证机制配置
+# ==========================================
+AUTHENTICATION_BACKENDS = [
+    'liuyingauth.backends.EmailOrUsernameModelBackend',  # 优先使用我们的新规则（支持邮箱/用户名）
+    'django.contrib.auth.backends.ModelBackend',         # 保留 Django 原生规则作为兜底
+]
 
 
