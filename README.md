@@ -73,6 +73,12 @@
   - 返回字段：id, title, content, pub_time, author_name
 - **可扩展性**: 未来可轻松接入微信小程序、移动端 App 或 AI 应用
 
+### 📊 日志管理系统
+- **分级记录**: INFO、WARNING、ERROR 三级日志分层存储
+- **按日期和类型分类**: 日志文件按类型（error.log、info.log）存储，备份文件按日期命名（如 error.log.2026-04-26）
+- **自动轮换**: 每天午夜自动轮换，保留 30 天历史日志
+- **高效存储**: 单个日志文件最大 10MB，超出后自动分割
+
 ## 📂 项目目录结构
 
 ```text
@@ -128,10 +134,18 @@ F:\liuying/
 │   ├── avatars/YYYY/MM/    # 用户头像 (按年月分类)
 │   └── upload/YYYY/MM/     # 博客图片/视频 (按年月分类)
 │
+├── logs/                   # 日志文件 (按类型和日期分类)
+│   ├── error.log           # 错误日志 (WARNING+)
+│   ├── info.log            # 信息日志 (INFO+)
+│   └── *.log.YYYY-MM-DD    # 历史日志备份
+│
 ├── .env                    # 环境变量 (SECRET_KEY, DEBUG, EMAIL_PASSWORD)
 ├── requirements.txt        # Python 依赖包
 ├── manage.py               # Django 管理脚本
+├── start.bat               # 一键启动脚本 (Windows)
+├── stop.bat                # 一键停止脚本 (Windows)
 ├── db.sqlite3              # SQLite 数据库文件
+├── .gitignore              # Git 忽略文件
 └── README.md               # 项目文档
 ```
 
@@ -156,9 +170,10 @@ F:\liuying/
 ## 🚀 本地快速运行
 
 ### 前置要求
-- Python 3.14+
+- Python 3.13+
 - pip (Python 包管理器)
 - Git (可选，用于克隆项目)
+- Redis (可选，用于缓存和异步任务)
 
 ### 安装步骤
 
@@ -188,8 +203,17 @@ python manage.py createsuperuser
 # 7. 收集静态文件（生产环境必需）
 python manage.py collectstatic --noinput
 
-# 8. 启动开发服务器
-python manage.py runserver
+# 8. 一键启动服务 (Windows)
+# 启动 Redis, Celery 和 Django
+.\start.bat
+
+# 或者手动启动
+# 启动 Redis (如果使用)
+# redis-server
+# 启动 Celery
+# celery -A liuyingblog worker --loglevel=info --pool=solo
+# 启动 Django
+# python manage.py runserver
 ```
 
 ### 访问地址
@@ -199,12 +223,23 @@ python manage.py runserver
 - **用户注册**: http://127.0.0.1:8000/auth/register
 - **用户登录**: http://127.0.0.1:8000/auth/login
 
+### 停止服务
+```bash
+# Windows 一键停止
+.\stop.bat
+
+# 或手动停止
+# 停止 Django (Ctrl+C)
+# 停止 Celery (Ctrl+C in Celery window)
+# 停止 Redis (Ctrl+C in Redis window)
+```
+
 ## 💡 踩坑记录
 
 本项目非教程照搬，所有坑均在实战中解决：
 
 ### Python & Django 相关
-- **Python 3.14 兼容性**: Django 6.0 严格校验 MySQL 驱动版本，使用 PyMySQL 必须在 `__init__.py` 中伪装版本号才能绕过校验（本项目已切换至 SQLite，无需此操作）
+- **Python 3.13 兼容性**: Django 6.0 严格校验 MySQL 驱动版本，使用 PyMySQL 必须在 `__init__.py` 中伪装版本号才能绕过校验（本项目已切换至 SQLite，无需此操作）
 - **生产环境 DEBUG=False 的连环坑**:
   - 关闭 Debug 不仅引发 400 错误，还会导致 Django 拒绝服务静态/媒体文件
   - 必须配合 `collectstatic` 和严谨的 Nginx `alias` 规则
@@ -220,7 +255,7 @@ python manage.py runserver
 - **头像缓存**: 上传新头像后，URL 不变会导致浏览器显示旧图，需在 URL 后添加时间戳参数
 
 ### 本地访问报错排查
-如果访问 `http://127.0.0.1:8000/` 出现“URL拼写可能存在错误，请检查”的提示，请确认：
+如果访问 `http://127.0.0.1:8000/` 出现"URL拼写可能存在错误，请检查"的提示，请确认：
 1. Django开发服务器是否正常启动（查看终端输出）
 2. 项目主路由 `liuyingblog/urls.py` 中是否正确配置了首页路由
 3. 浏览器是否有缓存问题，尝试强制刷新（Ctrl+F5）
@@ -231,6 +266,10 @@ python manage.py runserver
 - 检查 `.env` 文件中 `EMAIL_HOST_PASSWORD` 是否配置正确（QQ邮箱需使用授权码，而非登录密码）
 - 确认 QQ 邮箱已开启 SMTP 服务
 - 检查防火墙是否阻止 587 端口
+
+### 日志文件权限问题
+- Windows 下日志文件被占用时，TimedRotatingFileHandler 可能报 PermissionError
+- 已优化为 RotatingFileHandler，按文件大小轮换，避免时间轮换的锁定问题
 
 ## 📊 API 接口文档
 
@@ -357,4 +396,4 @@ sudo systemctl start liuying
 ---
 **用最扎实的技术，写最真实的博客。**
 
-*最后更新时间: 2026年4月25日*
+*最后更新时间: 2026年4月26日*
