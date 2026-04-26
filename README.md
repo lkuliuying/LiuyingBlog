@@ -191,8 +191,9 @@ venv\Scripts\activate  # Windows
 pip install -r requirements.txt
 
 # 4. 配置环境变量
-# 复制 .env 示例文件（如果不存在则手动创建）
-# 编辑 .env 文件，设置 SECRET_KEY 和 EMAIL_HOST_PASSWORD
+# 复制环境变量示例文件
+copy .env.example .env
+# 编辑 .env 文件，设置 SECRET_KEY 和其他敏感信息
 
 # 5. 执行数据库迁移
 python manage.py migrate

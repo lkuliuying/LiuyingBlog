@@ -94,7 +94,8 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'fallback-secret-key-for-local-dev')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DJANGO_DEBUG') == 'True'
 
-ALLOWED_HOSTS = ['43.163.232.238','www.liuying.com','liuying.com','127.0.0.1', 'testserver']
+# 允许的主机列表，从环境变量读取并分割
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1').split(',')
 
 
 # Application definition
@@ -191,7 +192,7 @@ USE_TZ = False
 # 静态文件加载路径
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [ BASE_DIR / 'static' ]
-STATIC_ROOT = '/www/wwwroot/liuying/static/'
+STATIC_ROOT = os.getenv('STATIC_ROOT', '/www/wwwroot/liuying/static/')
 # ★ 新增：媒体文件（用户上传的文件）
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -208,11 +209,11 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.qq.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = '3302393536@qq.com'
-EMAIL_FROM_NAME = '流萤博客'
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', '3302393536@qq.com')
+EMAIL_FROM_NAME = os.getenv('EMAIL_FROM_NAME', '流萤博客')
 # 从环境变量读取邮箱授权码，避免明文硬编码
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
-DEFAULT_FROM_EMAIL = '3302393536@qq.com'
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', '3302393536@qq.com')
 
 DJANGO_MYSQL_VERSION_CHECK = False
 
@@ -233,10 +234,12 @@ JAZZMIN_SETTINGS_DATETIME_FORMAT = 'Y-m-d H:i'
 
 #==========================================
 
+REDIS_URL = os.getenv('REDIS_URL', 'redis://127.0.0.1:6379/1')
+
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1",  # 使用 1 号库，避免和其他应用冲突
+        "LOCATION": REDIS_URL,  # 使用 1 号库，避免和其他应用冲突
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
             # "CONNECTION_KWARGS": {
@@ -277,8 +280,8 @@ AUTHENTICATION_BACKENDS = [
 # ==========================================
 # ★ Celery 配置区
 # ==========================================
-CELERY_BROKER_URL = 'redis://127.0.0.1:6379/1'
-CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/1'
+CELERY_BROKER_URL = REDIS_URL
+CELERY_RESULT_BACKEND = REDIS_URL
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
