@@ -7,7 +7,7 @@
              class="rounded-circle flex-shrink-0" width="36px" height="36px">
         <div class="flex-grow-1">
             <div class="d-flex justify-content-between text-body-tertiary small">
-                <span>{{ node.comment.author.username }}</span>
+                <a href="{% url 'liuyingauth:user_profile_by_id' node.comment.author.id %}" class="text-decoration-none text-body-tertiary">{{ node.comment.author.username }}</a>
                 <span>{{ node.comment.pub_time|date:'Y年m月d日 H:i' }}</span>
             </div>
 

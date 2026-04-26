@@ -4,7 +4,6 @@ from django.http.response import JsonResponse
 import string
 import random
 import os
-from django.core.mail import send_mail
 from .models import CaptchaModel
 from django.views.decorators.http import require_http_methods,require_POST
 from .forms import RegisterForm,LoginForm
@@ -15,6 +14,7 @@ from blog.models import Blog,BlogComment
 from .models import UserProfile
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth import login, logout, get_user_model, authenticate 
+from .tasks import send_email_task
 
 
 User=get_user_model()
@@ -63,7 +63,9 @@ def register(request):
         email = form.cleaned_data.get('email')
         password = form.cleaned_data.get('password')
         username = form.cleaned_data.get('username')
-        User.objects.create_user(email=email, username=username, password=password)
+        user = User.objects.create_user(email=email, username=username, password=password)
+        # 创建UserProfile
+        UserProfile.objects.create(user=user)
         messages.success(request, '注册成功！请登录')
         return redirect(reverse('liuyingauth:login'))
     else:
@@ -98,24 +100,19 @@ def send_email_captcha(request):
     # 存入数据库（update_or_create 会自动更新 created_time）
     CaptchaModel.objects.update_or_create(email=email,defaults={'captcha':captcha})
     #print(captcha)
-    # 发送邮件
-    try:
-        send_mail(
-            subject='流萤博客注册验证码',
-            message='您的验证码是：%s，有效时间为5分钟。' % captcha,
-            from_email=os.getenv('EMAIL_HOST_USER', '3302393536@qq.com'), # 顺便这里也规范一下
-            recipient_list=[email],
-            fail_silently=False, # 发送失败抛出异常，方便查错
-        )
-        return JsonResponse({
-            'code': 200,
-            'message': '验证码发送成功',
-        })
-    except Exception as e:
-        return JsonResponse({
-            'code': 500,
-            'message': f'邮件发送失败，具体错误：{str(e)}'
-        })
+    # 发送邮件（异步）
+    send_email_task.delay(
+        subject='流萤博客注册验证码',
+        message='您的验证码是：%s，有效时间为5分钟。' % captcha,
+        from_email=os.getenv('EMAIL_HOST_USER', '3302393536@qq.com'),
+        recipient_list=[email],
+    )
+    return JsonResponse({
+        'code': 200,
+        'message': '验证码发送成功（异步处理）',
+    })
+
+        
 @login_required
 def user_profile(request):
     # 第94行：查询当前用户发布的博客
@@ -124,12 +121,18 @@ def user_profile(request):
     user_comments = BlogComment.objects.filter(author=request.user).select_related('blog').order_by('-pub_time')
     liked_blogs = user.liked_blogs.all().order_by('-pub_time')
     collected_blogs = user.collected_blogs.all().order_by('-pub_time')
+    profile, created = UserProfile.objects.get_or_create(user=request.user)
+    following = profile.following.select_related('user').all()
+    followers = profile.followers.select_related('user').all()
     return render(request, 'user_profile.html', {
         'user_blogs': user_blogs,
         'user': request.user,
         'user_comments':user_comments,
         'liked_blogs': liked_blogs,
         'collected_blogs': collected_blogs,
+        'following': following,
+        'followers': followers,
+        'is_own_profile': True,
    })
    
    
@@ -199,4 +202,66 @@ def update_password(request):
     update_session_auth_hash(request, user)
 
     return JsonResponse({'code': 200, 'msg': '密码修改成功'})
-    
+
+
+@login_required
+def user_profile_by_id(request, user_id):
+    try:
+        profile_user = User.objects.get(id=user_id)
+    except User.DoesNotExist:
+        messages.error(request, '用户不存在')
+        return redirect('blog:index')
+
+    if profile_user == request.user:
+        return redirect('liuyingauth:profile')
+
+    user_blogs = Blog.objects.filter(author=profile_user).order_by('-pub_time')
+    user_comments = BlogComment.objects.filter(author=profile_user).select_related('blog').order_by('-pub_time')
+    profile, created = UserProfile.objects.get_or_create(user=profile_user)
+    following = profile.following.select_related('user').all()
+    followers = profile.followers.select_related('user').all()
+    current_profile, _ = UserProfile.objects.get_or_create(user=request.user)
+    is_following = current_profile.following.filter(id=profile.id).exists()
+
+    return render(request, 'user_profile.html', {
+        'user_blogs': user_blogs,
+        'user': profile_user,
+        'user_comments': user_comments,
+        'liked_blogs': [],  # Not shown for other users
+        'collected_blogs': [],  # Not shown for other users
+        'following': following,
+        'followers': followers,
+        'is_following': is_following,
+        'is_own_profile': False,
+    })
+
+
+@require_POST
+@login_required
+def follow_user(request, user_id):
+    try:
+        target_user = User.objects.get(id=user_id)
+    except User.DoesNotExist:
+        return JsonResponse({'code': 400, 'msg': '用户不存在'})
+
+    if target_user == request.user:
+        return JsonResponse({'code': 400, 'msg': '不能关注自己'})
+
+    profile, _ = UserProfile.objects.get_or_create(user=request.user)
+    target_profile, _ = UserProfile.objects.get_or_create(user=target_user)
+
+    if profile.following.filter(id=target_profile.id).exists():
+        profile.following.remove(target_profile)
+        is_following = False
+        msg = '已取消关注'
+    else:
+        profile.following.add(target_profile)
+        is_following = True
+        msg = '关注成功'
+
+    return JsonResponse({
+        'code': 200,
+        'msg': msg,
+        'is_following': is_following,
+        'followers_count': target_profile.followers.count()
+    })

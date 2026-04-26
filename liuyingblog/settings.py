@@ -17,6 +17,70 @@ from dotenv import load_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# 日志文件存放目录
+LOG_DIR = os.path.join(BASE_DIR, 'logs')
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False, # 保留 Django 默认的日志记录器
+    'formatters': {
+        'verbose': {
+            'format': '[{asctime}] {levelname} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '[{asctime}] {levelname} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+        # 错误日志 → logs/error/{YYYY-MM-DD}.log (WARNING 及以上)
+        'file_error': {
+            'level': 'WARNING',
+            'class': 'liuyingblog.log_handlers.DailyFileHandler',
+            'base_dir': os.path.join(LOG_DIR, 'error'),
+            'backup_count': 30,
+            'formatter': 'verbose',
+        },
+        # 信息日志 → logs/info/{YYYY-MM-DD}.log (INFO 及以上)
+        'file_info': {
+            'level': 'INFO',
+            'class': 'liuyingblog.log_handlers.DailyFileHandler',
+            'base_dir': os.path.join(LOG_DIR, 'info'),
+            'backup_count': 30,
+            'formatter': 'simple',
+        },
+    },
+    'loggers': {
+        # Django 框架自身的日志
+        'django': {
+            'handlers': ['console', 'file_info', 'file_error'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        # 你的核心业务 App 日志
+        'blog': {
+            'handlers': ['console', 'file_info', 'file_error'],
+            'level': 'INFO',
+        },
+        # 认证模块 App 日志
+        'liuyingauth': {
+            'handlers': ['console', 'file_info', 'file_error'],
+            'level': 'INFO',
+        },
+    },
+}
+
+# 如果 logs 文件夹不存在，则创建（开发环境防错）
+if not os.path.exists(LOG_DIR):
+    os.makedirs(LOG_DIR)
+
+
 # 加载根目录的 .env 文件
 load_dotenv(os.path.join(BASE_DIR, '.env'))
 
@@ -30,7 +94,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'fallback-secret-key-for-local-dev')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DJANGO_DEBUG') == 'True'
 
-ALLOWED_HOSTS = ['43.163.232.238','www.liuying.com','liuying.com','127.0.0.1']
+ALLOWED_HOSTS = ['43.163.232.238','www.liuying.com','liuying.com','127.0.0.1', 'testserver']
 
 
 # Application definition
@@ -125,8 +189,8 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 # 静态文件加载路径
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [  ]
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [ BASE_DIR / 'static' ]
 STATIC_ROOT = '/www/wwwroot/liuying/static/'
 # ★ 新增：媒体文件（用户上传的文件）
 MEDIA_URL = '/media/'
@@ -178,6 +242,7 @@ CACHES = {
             # "CONNECTION_KWARGS": {
             #     "decode_responses": True,  # 自动将字节转成字符串，免去 decode 的烦恼
             # }
+            "IGNORE_EXCEPTIONS": True,  # 忽略 Redis 连接错误，回退到本地缓存
         }
     }
 }
@@ -209,3 +274,12 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 
+# ==========================================
+# ★ Celery 配置区
+# ==========================================
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379/1'
+CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/1'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Asia/Shanghai'

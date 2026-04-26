@@ -1,0 +1,44 @@
+[2026-04-26 10:48:25,371] INFO Watching for file changes with StatReloader
+[2026-04-26 10:28:03,779] INFO Watching for file changes with StatReloader
+[2026-04-26 10:28:46,401] INFO Watching for file changes with StatReloader
+[2026-04-26 10:28:55,295] INFO "GET / HTTP/1.1" 200 14810
+[2026-04-26 10:28:56,573] INFO "GET /auth/login HTTP/1.1" 200 3325
+[2026-04-26 10:29:05,503] INFO "POST /auth/login HTTP/1.1" 302 0
+[2026-04-26 10:29:05,510] INFO "GET / HTTP/1.1" 200 15485
+[2026-04-26 10:29:08,154] INFO "GET /auth/profile/1/ HTTP/1.1" 302 0
+[2026-04-26 10:29:08,178] INFO "GET /auth/profile/ HTTP/1.1" 200 25473
+[2026-04-26 10:29:21,078] INFO "GET /blog/detail/7/ HTTP/1.1" 200 19646
+[2026-04-26 10:29:29,182] INFO "GET /blog/detail/7/ HTTP/1.1" 200 19646
+[2026-04-26 10:29:33,889] INFO "GET /auth/profile/ HTTP/1.1" 200 25473
+[2026-04-26 10:29:53,704] INFO "GET /blog/pub HTTP/1.1" 200 5093
+[2026-04-26 10:29:54,675] INFO "GET / HTTP/1.1" 200 15485
+[2026-04-26 10:29:55,083] INFO "GET /blog/pub HTTP/1.1" 200 5093
+[2026-04-26 10:29:55,876] INFO "GET / HTTP/1.1" 200 15485
+[2026-04-26 10:29:56,694] INFO "GET /auth/profile/ HTTP/1.1" 200 25473
+[2026-04-26 10:31:50,411] INFO "GET /blog/detail/7/ HTTP/1.1" 200 19646
+[2026-04-26 10:31:51,542] INFO "POST /blog/7/like/ HTTP/1.1" 200 57
+[2026-04-26 10:31:52,088] INFO "POST /blog/7/like/ HTTP/1.1" 200 58
+[2026-04-26 10:31:52,492] INFO "POST /blog/7/collect/ HTTP/1.1" 200 67
+[2026-04-26 10:31:52,904] INFO "POST /blog/7/collect/ HTTP/1.1" 200 68
+[2026-04-26 10:31:57,394] INFO "GET /blog/detail/6/ HTTP/1.1" 200 14831
+[2026-04-26 10:31:59,225] INFO "GET /blog/detail/5/ HTTP/1.1" 200 18339
+[2026-04-26 10:32:01,035] INFO "GET /blog/detail/4/ HTTP/1.1" 200 19970
+[2026-04-26 10:32:02,521] INFO "GET /blog/detail/3/ HTTP/1.1" 200 14848
+[2026-04-26 10:32:04,188] INFO "GET /blog/detail/2/ HTTP/1.1" 200 20751
+[2026-04-26 10:32:06,099] INFO "GET /blog/detail/1/ HTTP/1.1" 200 16599
+[2026-04-26 10:32:08,614] INFO "GET /auth/profile/ HTTP/1.1" 200 25473
+[2026-04-26 10:32:11,256] INFO "GET /auth/profile/ HTTP/1.1" 200 25473
+[2026-04-26 10:32:13,737] INFO "GET /auth/profile/ HTTP/1.1" 200 25473
+[2026-04-26 10:32:20,086] INFO "GET /auth/profile/ HTTP/1.1" 200 25473
+[2026-04-26 10:32:22,248] INFO "GET /blog/pub HTTP/1.1" 200 5093
+[2026-04-26 10:32:23,580] INFO "GET / HTTP/1.1" 200 15485
+[2026-04-26 10:39:03,642] INFO "GET /blog/detail/7/ HTTP/1.1" 200 19646
+[2026-04-26 10:39:05,476] INFO "GET /blog/detail/6/ HTTP/1.1" 200 14831
+[2026-04-26 10:39:07,123] INFO "GET /blog/detail/5/ HTTP/1.1" 200 18339
+[2026-04-26 10:39:32,134] INFO "GET /auth/profile/3/ HTTP/1.1" 200 21002
+[2026-04-26 10:39:53,568] INFO "GET /auth/profile/ HTTP/1.1" 200 25473
+[2026-04-26 10:44:10,132] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-26 10:44:10,755] INFO Watching for file changes with StatReloader
+[2026-04-26 10:48:24,727] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-26 10:49:41,682] INFO 测试 info 日志写入
+[2026-04-26 10:49:41,682] WARNING 测试 warning 日志写入

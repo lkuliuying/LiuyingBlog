@@ -26,7 +26,7 @@
     <hr>
     <div class="mt-2">
         <img src="{% static 'image/liuying.jpg' %}" alt="head" class="rounded-circle" width="30px" height="30px">
-        <span class="ms-2">{{ blog.author.username }}</span>
+        <a href="{% url 'liuyingauth:user_profile_by_id' blog.author.id %}" class="text-decoration-none text-dark ms-2">{{ blog.author.username }}</a>
         <span class="ms-2">于</span>
         <span class="ms-2">{{ blog.pub_time|date:'Y年m月d日 H时i分s秒' }}</span>发布
     </div>
@@ -184,8 +184,9 @@
                     }
                 }
             });
-        });
-        const collectBtn = document.getElementById('collect-btn');
+
+            // 收藏功能的 Fetch API 逻辑
+            const collectBtn = document.getElementById('collect-btn');
             if (collectBtn) {
                 collectBtn.addEventListener('click', function() {
                     const blogId = this.dataset.id;
@@ -209,10 +210,8 @@
                     })
                     .then(data => {
                         if (data && data.status === 'success') {
-                            // 更新数量
                             document.getElementById('collect-count').innerText = data.total_collections;
-                            
-                            // 切换按钮的薄荷绿样式
+
                             if (data.is_collected) {
                                 collectBtn.classList.remove('btn-outline-primary');
                                 collectBtn.classList.add('btn-primary');
@@ -227,14 +226,13 @@
                     .catch(error => console.error('收藏请求失败:', error));
                 });
             }
-            // 👇 新增：评论点赞功能的 Fetch API 逻辑 (使用事件委托) 👇
+
+            // 评论点赞功能的 Fetch API 逻辑 (使用事件委托)
             document.addEventListener('click', function (e) {
-                // 判断点击的是不是评论的点赞按钮 (或者是按钮内部的图标/文字)
                 const btn = e.target.closest('.comment-like-btn');
-                if (!btn) return; // 如果不是，直接退出不处理
+                if (!btn) return;
 
                 const commentId = btn.dataset.id;
-                // 复用你之前放在页面里的那个隐藏的 CSRF token
                 const csrfToken = document.getElementById('csrf_token_for_fetch').value;
 
                 fetch(`/comment/${commentId}/like/`, {
@@ -255,10 +253,8 @@
                 })
                 .then(data => {
                     if (data && data.status === 'success') {
-                        // 更新数量
                         btn.querySelector('.comment-like-count').innerText = data.total_likes;
-                        
-                        // 切换我们设计的薄荷绿样式
+
                         const iconSpan = btn.querySelector('.comment-like-icon');
                         if (data.is_liked) {
                             btn.style.color = 'var(--primary-mint)';
@@ -271,7 +267,6 @@
                 })
                 .catch(error => console.error('评论点赞请求失败:', error));
             });
-            // 👆 新增结束 👆
-            
+        });
     </script>
 {% endblock %}

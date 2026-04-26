@@ -1,0 +1,1760 @@
+[2026-04-25 20:07:47,476] INFO Watching for file changes with StatReloader
+[2026-04-25 20:08:17,342] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:08:17,809] INFO Watching for file changes with StatReloader
+[2026-04-25 20:09:27,152] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:09:27,646] INFO Watching for file changes with StatReloader
+[2026-04-25 20:11:19,690] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:11:20,186] INFO Watching for file changes with StatReloader
+[2026-04-25 20:11:26,429] INFO Watching for file changes with StatReloader
+[2026-04-25 20:11:49,042] INFO "GET / HTTP/1.1" 200 14537
+[2026-04-25 20:11:49,052] WARNING "GET /static/css/base.css HTTP/1.1" 404 1850
+[2026-04-25 20:11:49,058] WARNING "GET /static/image/logo.png HTTP/1.1" 404 1856
+[2026-04-25 20:11:49,159] INFO "GET /media/upload/2026/04/e1a938ca15b241acbfb2480af06a08ef.jpg HTTP/1.1" 200 391428
+[2026-04-25 20:11:49,170] WARNING Not Found: /favicon.ico
+[2026-04-25 20:11:49,171] WARNING "GET /favicon.ico HTTP/1.1" 404 5250
+[2026-04-25 20:12:15,204] INFO "GET / HTTP/1.1" 200 14537
+[2026-04-25 20:12:15,225] WARNING "GET /static/bootstrap5/bootstrap.min.css HTTP/1.1" 404 1898
+[2026-04-25 20:12:15,225] WARNING "GET /static/css/base.css HTTP/1.1" 404 1850
+[2026-04-25 20:12:15,225] WARNING "GET /static/bootstrap5/popper.min.js HTTP/1.1" 404 1886
+[2026-04-25 20:12:15,230] WARNING "GET /static/bootstrap5/bootstrap.min.js HTTP/1.1" 404 1895
+[2026-04-25 20:12:15,235] INFO "GET /media/upload/2026/04/e1a938ca15b241acbfb2480af06a08ef.jpg HTTP/1.1" 200 391428
+[2026-04-25 20:12:15,242] WARNING "GET /static/image/logo.png HTTP/1.1" 404 1856
+[2026-04-25 20:12:15,246] WARNING "GET /static/image/liuying.jpg HTTP/1.1" 404 1865
+[2026-04-25 20:12:15,257] WARNING Not Found: /favicon.ico
+[2026-04-25 20:12:15,258] WARNING "GET /favicon.ico HTTP/1.1" 404 5250
+[2026-04-25 20:12:20,367] WARNING "GET /static/bootstrap5/bootstrap.min.css HTTP/1.1" 404 1898
+[2026-04-25 20:12:20,368] WARNING "GET /static/css/base.css HTTP/1.1" 404 1850
+[2026-04-25 20:12:20,377] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:12:20,378] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:12:22,229] INFO - Broken pipe from ('127.0.0.1', 2145)
+[2026-04-25 20:12:25,879] INFO "GET / HTTP/1.1" 200 14537
+[2026-04-25 20:12:25,891] WARNING "GET /static/bootstrap5/bootstrap.min.css HTTP/1.1" 404 1898
+[2026-04-25 20:12:25,900] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:12:25,904] WARNING "GET /static/bootstrap5/popper.min.js HTTP/1.1" 404 1886
+[2026-04-25 20:12:25,908] WARNING "GET /static/bootstrap5/bootstrap.min.js HTTP/1.1" 404 1895
+[2026-04-25 20:12:25,908] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:12:25,908] WARNING "GET /static/css/base.css HTTP/1.1" 404 1850
+[2026-04-25 20:12:25,921] WARNING "GET /static/image/logo.png HTTP/1.1" 404 1856
+[2026-04-25 20:12:25,921] WARNING "GET /static/image/liuying.jpg HTTP/1.1" 404 1865
+[2026-04-25 20:12:25,931] WARNING Not Found: /favicon.ico
+[2026-04-25 20:12:25,932] WARNING "GET /favicon.ico HTTP/1.1" 404 5250
+[2026-04-25 20:14:10,780] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:14:11,247] INFO Watching for file changes with StatReloader
+[2026-04-25 20:14:37,141] INFO Watching for file changes with StatReloader
+[2026-04-25 20:14:44,316] INFO - Broken pipe from ('127.0.0.1', 6203)
+[2026-04-25 20:14:57,223] INFO "GET / HTTP/1.1" 200 14537
+[2026-04-25 20:14:57,461] INFO "GET /static/bootstrap5/bootstrap.min.js HTTP/1.1" 200 60635
+[2026-04-25 20:14:57,466] INFO "GET /static/css/base.css HTTP/1.1" 200 3230
+[2026-04-25 20:14:57,476] INFO "GET /static/bootstrap5/popper.min.js HTTP/1.1" 200 20122
+[2026-04-25 20:14:57,486] INFO "GET /static/bootstrap5/bootstrap.min.css HTTP/1.1" 200 232803
+[2026-04-25 20:14:57,494] INFO "GET /static/image/liuying.jpg HTTP/1.1" 200 365234
+[2026-04-25 20:14:57,548] INFO "GET /static/image/logo.png HTTP/1.1" 200 4795118
+[2026-04-25 20:15:01,468] INFO "GET /auth/login HTTP/1.1" 200 3325
+[2026-04-25 20:15:32,943] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:15:32,944] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:15:32,950] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:15:33,011] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:15:33,017] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:15:34,265] INFO "GET /auth/login HTTP/1.1" 200 3325
+[2026-04-25 20:15:34,294] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:15:34,295] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:15:34,314] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:15:34,318] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:15:34,334] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:15:34,396] INFO "GET /static/image/logo.png HTTP/1.1" 200 4795118
+[2026-04-25 20:16:13,327] INFO "GET /auth/login HTTP/1.1" 200 3325
+[2026-04-25 20:16:13,347] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:16:13,348] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:16:13,360] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:16:13,371] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:16:13,377] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:16:14,299] INFO "GET /auth/login HTTP/1.1" 200 3325
+[2026-04-25 20:16:14,317] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:16:14,318] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:16:14,327] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:16:14,338] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:16:14,343] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:17:51,987] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:17:51,991] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:17:52,463] INFO Watching for file changes with StatReloader
+[2026-04-25 20:17:53,066] INFO "POST /auth/login HTTP/1.1" 302 0
+[2026-04-25 20:17:57,162] INFO "GET / HTTP/1.1" 200 15212
+[2026-04-25 20:17:57,223] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:17:57,224] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:17:57,245] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:17:57,248] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:17:57,250] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:18:44,555] INFO Watching for file changes with StatReloader
+[2026-04-25 20:18:56,138] INFO "GET / HTTP/1.1" 200 15212
+[2026-04-25 20:18:56,163] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:18:56,164] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:18:56,177] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:18:56,185] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:18:56,190] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:19:01,088] INFO "GET /auth/profile/ HTTP/1.1" 200 20401
+[2026-04-25 20:19:01,183] INFO "GET /media/avatars/2026/04/liuying_Z4q5gS3.jpg HTTP/1.1" 200 365234
+[2026-04-25 20:19:02,610] INFO - Broken pipe from ('127.0.0.1', 5645)
+[2026-04-25 20:19:07,848] INFO "GET /blog/detail/7/ HTTP/1.1" 200 19901
+[2026-04-25 20:19:07,853] INFO "GET /static/highlight/styles/github-dark.min.css HTTP/1.1" 200 1324
+[2026-04-25 20:19:07,854] INFO "GET /static/highlight/highlight.min.js HTTP/1.1" 200 141118
+[2026-04-25 20:19:10,641] INFO "GET /blog/pub HTTP/1.1" 200 5093
+[2026-04-25 20:19:10,646] INFO "GET /static/js/pub_blog.js?v=2 HTTP/1.1" 200 2153
+[2026-04-25 20:20:28,235] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:20:28,445] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:20:28,451] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:20:28,705] INFO Watching for file changes with StatReloader
+[2026-04-25 20:20:28,898] INFO Watching for file changes with StatReloader
+[2026-04-25 20:20:28,911] INFO Watching for file changes with StatReloader
+[2026-04-25 20:20:46,390] INFO "GET / HTTP/1.1" 200 14537
+[2026-04-25 20:20:46,718] INFO "GET /auth/register HTTP/1.1" 200 3692
+[2026-04-25 20:20:46,828] INFO "GET /static/js/register.js HTTP/1.1" 200 1663
+[2026-04-25 20:20:47,773] INFO "GET /auth/login HTTP/1.1" 200 3325
+[2026-04-25 20:21:07,224] INFO "GET /auth/login HTTP/1.1" 200 3325
+[2026-04-25 20:21:07,874] INFO "GET /auth/login HTTP/1.1" 200 3325
+[2026-04-25 20:21:26,248] INFO Watching for file changes with StatReloader
+[2026-04-25 20:21:43,464] INFO "GET / HTTP/1.1" 200 14537
+[2026-04-25 20:21:44,820] INFO "GET /auth/login HTTP/1.1" 200 3325
+[2026-04-25 20:22:32,449] INFO "GET /auth/login HTTP/1.1" 200 3325
+[2026-04-25 20:22:44,482] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:22:44,483] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:22:44,490] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:22:44,550] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:22:44,550] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:22:45,702] INFO "GET /auth/login HTTP/1.1" 200 3325
+[2026-04-25 20:22:45,729] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:22:45,730] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:22:45,748] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:22:45,752] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:22:45,763] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:25:45,389] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:25:45,393] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:25:45,416] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:25:45,861] INFO Watching for file changes with StatReloader
+[2026-04-25 20:25:45,861] INFO Watching for file changes with StatReloader
+[2026-04-25 20:26:14,093] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:26:14,098] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:26:14,108] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:26:14,591] INFO Watching for file changes with StatReloader
+[2026-04-25 20:26:14,610] INFO Watching for file changes with StatReloader
+[2026-04-25 20:29:57,815] INFO Watching for file changes with StatReloader
+[2026-04-25 20:30:01,486] INFO "GET /auth/login HTTP/1.1" 200 3325
+[2026-04-25 20:30:01,504] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:01,507] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:01,527] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:01,528] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:01,537] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:10,412] INFO "POST /auth/login HTTP/1.1" 302 0
+[2026-04-25 20:30:10,444] INFO "GET / HTTP/1.1" 200 15212
+[2026-04-25 20:30:10,468] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:10,470] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:10,497] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:10,498] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:10,504] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:13,207] INFO "GET /auth/profile/ HTTP/1.1" 200 20401
+[2026-04-25 20:30:13,228] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:13,230] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:13,255] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:13,255] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:13,263] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:14,446] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:14,452] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:14,453] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:14,458] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:14,462] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:14,476] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:14,477] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:14,481] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:14,934] INFO "GET /blog/pub HTTP/1.1" 200 5093
+[2026-04-25 20:30:14,957] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:14,958] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:14,965] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:14,974] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:14,978] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:15,726] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:15,736] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:15,741] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:15,742] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:15,742] INFO - Broken pipe from ('127.0.0.1', 14653)
+[2026-04-25 20:30:15,747] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:15,759] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:15,760] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:15,764] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:16,809] INFO "GET /auth/profile/ HTTP/1.1" 200 20401
+[2026-04-25 20:30:16,829] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:16,830] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:16,851] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:16,852] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:16,859] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:18,111] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:18,117] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:18,118] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:18,123] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:18,127] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:18,142] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:18,143] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:18,148] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:20,935] INFO "GET /blog/detail/7/ HTTP/1.1" 200 19901
+[2026-04-25 20:30:20,959] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:20,960] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:20,966] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:20,975] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:20,979] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:22,967] INFO "POST /comment/10/like/ HTTP/1.1" 200 57
+[2026-04-25 20:30:24,028] INFO "POST /comment/10/like/ HTTP/1.1" 200 58
+[2026-04-25 20:30:26,161] INFO "POST /comment/10/like/ HTTP/1.1" 200 57
+[2026-04-25 20:30:26,897] INFO "POST /comment/10/like/ HTTP/1.1" 200 58
+[2026-04-25 20:30:31,730] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:31,737] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:31,737] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:31,743] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:31,748] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:31,761] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:31,762] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:31,766] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:32,240] INFO "GET /blog/pub HTTP/1.1" 200 5093
+[2026-04-25 20:30:32,260] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:32,261] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:32,278] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:32,278] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:32,283] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:40,490] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:40,496] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:40,501] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:40,501] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:40,507] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:40,518] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:40,519] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:40,524] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:41,353] INFO "GET /blog/detail/6/ HTTP/1.1" 200 15284
+[2026-04-25 20:30:41,375] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:41,376] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:41,388] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:41,393] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:41,397] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:42,831] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:42,836] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:42,837] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:42,842] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:42,846] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:42,862] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:42,863] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:42,867] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:43,412] INFO "GET /blog/detail/5/ HTTP/1.1" 200 18660
+[2026-04-25 20:30:43,434] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:43,435] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:43,447] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:43,448] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:43,518] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:44,583] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:44,588] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:44,592] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:44,593] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:44,598] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:44,616] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:44,617] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:44,622] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:45,395] INFO "GET /blog/detail/4/ HTTP/1.1" 200 20291
+[2026-04-25 20:30:45,417] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:45,418] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:45,433] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:45,438] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:45,442] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:46,496] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:46,500] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:46,505] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:46,507] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:46,511] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:46,526] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:46,528] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:46,532] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:47,106] INFO "GET /blog/detail/3/ HTTP/1.1" 200 15301
+[2026-04-25 20:30:47,129] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:47,130] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:47,142] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:47,150] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:47,151] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:48,139] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:48,146] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:48,147] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:48,152] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:48,156] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:48,169] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:48,171] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:48,174] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:49,049] INFO "GET /blog/detail/2/ HTTP/1.1" 200 20940
+[2026-04-25 20:30:49,079] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:49,081] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:49,095] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:49,096] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:49,141] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:50,701] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:50,706] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:50,711] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:50,713] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:50,717] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:50,732] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:50,733] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:50,738] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:51,739] INFO "GET /blog/detail/1/ HTTP/1.1" 200 16986
+[2026-04-25 20:30:51,765] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:51,766] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:51,787] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:51,787] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:51,792] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:52,706] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:30:52,710] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:30:52,715] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:52,717] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:52,720] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:30:52,741] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:30:52,743] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:30:52,746] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:38:08,723] ERROR Test error log
+[2026-04-25 20:40:53,955] INFO F:\Program\Python\liuying\liuyingblog\__init__.py changed, reloading.
+[2026-04-25 20:40:53,975] INFO F:\Program\Python\liuying\liuyingblog\__init__.py changed, reloading.
+[2026-04-25 20:40:54,312] INFO F:\Program\Python\liuying\liuyingblog\__init__.py changed, reloading.
+[2026-04-25 20:40:54,338] INFO F:\Program\Python\liuying\liuyingblog\__init__.py changed, reloading.
+[2026-04-25 20:40:54,535] INFO Watching for file changes with StatReloader
+[2026-04-25 20:40:54,536] INFO Watching for file changes with StatReloader
+[2026-04-25 20:40:54,889] INFO Watching for file changes with StatReloader
+[2026-04-25 20:40:54,932] INFO Watching for file changes with StatReloader
+[2026-04-25 20:41:01,751] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:41:01,754] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:41:01,999] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:41:02,013] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:41:02,347] INFO Watching for file changes with StatReloader
+[2026-04-25 20:41:02,572] INFO Watching for file changes with StatReloader
+[2026-04-25 20:41:02,585] INFO Watching for file changes with StatReloader
+[2026-04-25 20:41:10,627] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 20:41:10,634] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 20:41:10,800] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 20:41:10,816] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 20:41:11,217] INFO Watching for file changes with StatReloader
+[2026-04-25 20:41:11,218] INFO Watching for file changes with StatReloader
+[2026-04-25 20:41:11,361] INFO Watching for file changes with StatReloader
+[2026-04-25 20:41:11,384] INFO Watching for file changes with StatReloader
+[2026-04-25 20:41:48,711] INFO "GET / HTTP/1.1" 200 15212
+[2026-04-25 20:41:48,727] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:41:48,728] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:41:48,736] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:41:48,746] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:41:48,751] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:41:51,963] INFO "GET /auth/logout HTTP/1.1" 302 0
+[2026-04-25 20:41:51,968] INFO "GET / HTTP/1.1" 200 14537
+[2026-04-25 20:41:51,988] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:41:51,988] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:41:51,997] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:41:52,004] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:41:52,008] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:41:52,855] INFO "GET /auth/register HTTP/1.1" 200 3692
+[2026-04-25 20:41:52,878] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:41:52,879] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:41:52,887] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:41:52,898] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:41:52,902] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:42:33,414] INFO "GET /auth/captcha?email=202307071006%40stumail.xsyu.edu.cn HTTP/1.1" 200 106
+[2026-04-25 20:45:46,726] INFO F:\Program\Python\liuying\liuyingauth\admin.py changed, reloading.
+[2026-04-25 20:45:46,754] INFO F:\Program\Python\liuying\liuyingauth\admin.py changed, reloading.
+[2026-04-25 20:45:46,764] INFO F:\Program\Python\liuying\liuyingauth\admin.py changed, reloading.
+[2026-04-25 20:45:46,769] INFO F:\Program\Python\liuying\liuyingauth\admin.py changed, reloading.
+[2026-04-25 20:45:47,319] INFO Watching for file changes with StatReloader
+[2026-04-25 20:45:47,333] INFO Watching for file changes with StatReloader
+[2026-04-25 20:45:47,342] INFO Watching for file changes with StatReloader
+[2026-04-25 20:45:47,356] INFO Watching for file changes with StatReloader
+[2026-04-25 20:49:37,067] INFO "GET /admin HTTP/1.1" 301 0
+[2026-04-25 20:49:37,086] INFO "GET /admin/ HTTP/1.1" 302 0
+[2026-04-25 20:49:37,099] INFO "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3063
+[2026-04-25 20:49:37,435] INFO "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 103010
+[2026-04-25 20:49:37,441] INFO "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+[2026-04-25 20:49:37,444] INFO "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 200 18270
+[2026-04-25 20:49:37,455] INFO "GET /static/jazzmin/css/main.css HTTP/1.1" 200 14372
+[2026-04-25 20:49:37,470] INFO "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 200 298755
+[2026-04-25 20:49:37,470] INFO "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 200 2637
+[2026-04-25 20:49:37,484] INFO "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 60635
+[2026-04-25 20:49:39,443] INFO "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 156400
+[2026-04-25 20:50:08,817] INFO "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2026-04-25 20:50:08,840] INFO "GET /admin/ HTTP/1.1" 200 28102
+[2026-04-25 20:50:08,853] INFO "GET /static/jazzmin/js/main.js HTTP/1.1" 200 4542
+[2026-04-25 20:50:08,864] INFO "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 25392
+[2026-04-25 20:50:17,061] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:50:17,062] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:50:17,113] INFO "GET /static/vendor/adminlte/js/adminlte.min.js.map HTTP/1.1" 200 19962
+[2026-04-25 20:50:17,117] INFO "GET /static/vendor/bootstrap/js/bootstrap.min.js.map HTTP/1.1" 200 220561
+[2026-04-25 20:50:17,121] INFO "GET /static/vendor/adminlte/css/adminlte.min.css.map HTTP/1.1" 200 763885
+[2026-04-25 20:50:20,164] INFO "GET /admin/ HTTP/1.1" 200 28102
+[2026-04-25 20:50:20,183] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:50:20,184] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:50:20,306] WARNING "GET /static/vendor/src/ts/direct-chat.ts HTTP/1.1" 404 1898
+[2026-04-25 20:50:20,306] WARNING "GET /static/vendor/src/ts/card-widget.ts HTTP/1.1" 404 1898
+[2026-04-25 20:50:20,306] WARNING "GET /static/vendor/src/ts/treeview.ts HTTP/1.1" 404 1889
+[2026-04-25 20:50:20,306] WARNING "GET /static/vendor/src/ts/layout.ts HTTP/1.1" 404 1883
+[2026-04-25 20:50:20,306] WARNING "GET /static/vendor/src/ts/util/index.ts HTTP/1.1" 404 1895
+[2026-04-25 20:50:20,307] WARNING "GET /static/vendor/src/ts/fullscreen.ts HTTP/1.1" 404 1895
+[2026-04-25 20:50:20,314] WARNING "GET /static/vendor/src/ts/push-menu.ts HTTP/1.1" 404 1892
+[2026-04-25 20:50:20,321] WARNING "GET /static/vendor/src/ts/accessibility.ts HTTP/1.1" 404 1904
+[2026-04-25 20:50:20,322] WARNING "GET /static/vendor/src/ts/adminlte.ts HTTP/1.1" 404 1889
+[2026-04-25 20:50:24,635] INFO "GET /admin/ HTTP/1.1" 200 28102
+[2026-04-25 20:50:24,655] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:50:24,656] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:50:24,721] WARNING "GET /static/vendor/src/ts/util/index.ts HTTP/1.1" 404 1895
+[2026-04-25 20:50:24,722] WARNING "GET /static/vendor/src/ts/card-widget.ts HTTP/1.1" 404 1898
+[2026-04-25 20:50:24,726] WARNING "GET /static/vendor/src/ts/layout.ts HTTP/1.1" 404 1883
+[2026-04-25 20:50:24,731] WARNING "GET /static/vendor/src/ts/treeview.ts HTTP/1.1" 404 1889
+[2026-04-25 20:50:24,736] WARNING "GET /static/vendor/src/ts/direct-chat.ts HTTP/1.1" 404 1898
+[2026-04-25 20:50:24,737] WARNING "GET /static/vendor/src/ts/fullscreen.ts HTTP/1.1" 404 1895
+[2026-04-25 20:50:24,749] WARNING "GET /static/vendor/src/ts/push-menu.ts HTTP/1.1" 404 1892
+[2026-04-25 20:50:24,750] WARNING "GET /static/vendor/src/ts/accessibility.ts HTTP/1.1" 404 1904
+[2026-04-25 20:50:24,750] WARNING "GET /static/vendor/src/ts/adminlte.ts HTTP/1.1" 404 1889
+[2026-04-25 20:50:30,354] INFO "GET /admin/ HTTP/1.1" 200 28102
+[2026-04-25 20:50:30,371] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:50:30,372] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:50:30,434] WARNING "GET /static/vendor/src/ts/util/index.ts HTTP/1.1" 404 1895
+[2026-04-25 20:50:30,445] WARNING "GET /static/vendor/src/ts/card-widget.ts HTTP/1.1" 404 1898
+[2026-04-25 20:50:30,445] WARNING "GET /static/vendor/src/ts/direct-chat.ts HTTP/1.1" 404 1898
+[2026-04-25 20:50:30,446] WARNING "GET /static/vendor/src/ts/fullscreen.ts HTTP/1.1" 404 1895
+[2026-04-25 20:50:30,447] WARNING "GET /static/vendor/src/ts/treeview.ts HTTP/1.1" 404 1889
+[2026-04-25 20:50:30,447] WARNING "GET /static/vendor/src/ts/layout.ts HTTP/1.1" 404 1883
+[2026-04-25 20:50:30,457] WARNING "GET /static/vendor/src/ts/push-menu.ts HTTP/1.1" 404 1892
+[2026-04-25 20:50:30,458] WARNING "GET /static/vendor/src/ts/accessibility.ts HTTP/1.1" 404 1904
+[2026-04-25 20:50:30,462] WARNING "GET /static/vendor/src/ts/adminlte.ts HTTP/1.1" 404 1889
+[2026-04-25 20:51:25,130] INFO C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\jazzmin\compat.py changed, reloading.
+[2026-04-25 20:51:25,704] INFO Watching for file changes with StatReloader
+[2026-04-25 20:51:25,897] INFO C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\jazzmin\apps.py changed, reloading.
+[2026-04-25 20:51:25,901] INFO C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\jazzmin\__init__.py changed, reloading.
+[2026-04-25 20:51:25,901] INFO C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\jazzmin\utils.py changed, reloading.
+[2026-04-25 20:51:26,475] INFO Watching for file changes with StatReloader
+[2026-04-25 20:51:26,486] INFO Watching for file changes with StatReloader
+[2026-04-25 20:51:26,488] INFO Watching for file changes with StatReloader
+[2026-04-25 20:52:10,724] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:52:11,002] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:52:11,027] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:52:11,028] INFO F:\Program\Python\liuying\liuyingblog\settings.py changed, reloading.
+[2026-04-25 20:52:11,300] INFO Watching for file changes with StatReloader
+[2026-04-25 20:52:11,571] INFO Watching for file changes with StatReloader
+[2026-04-25 20:52:11,607] INFO Watching for file changes with StatReloader
+[2026-04-25 20:52:11,616] INFO Watching for file changes with StatReloader
+[2026-04-25 20:52:33,247] INFO "GET /admin/ HTTP/1.1" 200 28761
+[2026-04-25 20:52:33,260] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:52:33,261] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:52:33,347] INFO "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 80721
+[2026-04-25 20:52:33,360] WARNING "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 404 1955
+[2026-04-25 20:52:33,384] WARNING "GET /static/vendor/src/ts/util/index.ts HTTP/1.1" 404 1895
+[2026-04-25 20:52:33,384] WARNING "GET /static/vendor/src/ts/layout.ts HTTP/1.1" 404 1883
+[2026-04-25 20:52:33,388] WARNING "GET /static/vendor/src/ts/card-widget.ts HTTP/1.1" 404 1898
+[2026-04-25 20:52:33,389] WARNING "GET /static/vendor/src/ts/treeview.ts HTTP/1.1" 404 1889
+[2026-04-25 20:52:33,393] WARNING "GET /static/vendor/src/ts/direct-chat.ts HTTP/1.1" 404 1898
+[2026-04-25 20:52:33,395] WARNING "GET /static/vendor/src/ts/fullscreen.ts HTTP/1.1" 404 1895
+[2026-04-25 20:52:33,406] WARNING "GET /static/vendor/src/ts/push-menu.ts HTTP/1.1" 404 1892
+[2026-04-25 20:52:33,407] WARNING "GET /static/vendor/src/ts/accessibility.ts HTTP/1.1" 404 1904
+[2026-04-25 20:52:33,407] WARNING "GET /static/vendor/src/ts/adminlte.ts HTTP/1.1" 404 1889
+[2026-04-25 20:52:37,495] INFO "GET /admin/blog/blog/ HTTP/1.1" 200 25527
+[2026-04-25 20:52:37,504] INFO "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+[2026-04-25 20:52:37,507] INFO "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 200 16264
+[2026-04-25 20:52:37,509] INFO "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+[2026-04-25 20:52:37,511] INFO "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+[2026-04-25 20:52:37,511] INFO "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+[2026-04-25 20:52:37,513] INFO "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+[2026-04-25 20:52:37,513] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 8869
+[2026-04-25 20:52:37,513] INFO "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+[2026-04-25 20:52:37,516] INFO "GET /static/jazzmin/js/change_list.js HTTP/1.1" 200 2205
+[2026-04-25 20:52:37,519] INFO "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 200 73170
+[2026-04-25 20:52:37,523] INFO "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+[2026-04-25 20:52:39,108] INFO "GET /admin/auth/user/ HTTP/1.1" 200 23514
+[2026-04-25 20:52:39,114] INFO "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 558
+[2026-04-25 20:52:39,114] INFO "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 645
+[2026-04-25 20:52:39,117] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 8869
+[2026-04-25 20:52:47,292] INFO "GET /admin/liuyingauth/userprofile/ HTTP/1.1" 200 17900
+[2026-04-25 20:52:47,346] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 8869
+[2026-04-25 20:52:49,380] INFO "GET /admin/liuyingauth/captchamodel/ HTTP/1.1" 200 20821
+[2026-04-25 20:52:49,503] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 8869
+[2026-04-25 20:54:23,725] INFO "GET /admin/liuyingauth/captchamodel/ HTTP/1.1" 200 20821
+[2026-04-25 20:54:23,734] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 8869
+[2026-04-25 20:54:25,436] INFO "GET /auth/register HTTP/1.1" 200 4367
+[2026-04-25 20:54:25,454] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:54:25,455] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:54:25,478] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:54:25,478] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:54:25,485] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:54:26,737] INFO "GET / HTTP/1.1" 200 15212
+[2026-04-25 20:54:26,759] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:54:26,760] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:54:26,782] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:54:26,783] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:54:26,787] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:54:29,125] INFO "GET /auth/profile/ HTTP/1.1" 200 20401
+[2026-04-25 20:54:29,144] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:54:29,145] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:54:29,166] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:54:29,167] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:54:29,173] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:54:30,756] INFO "GET /blog/detail/7/ HTTP/1.1" 200 19901
+[2026-04-25 20:54:30,781] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:54:30,781] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:54:30,791] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:54:30,796] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:54:30,801] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:54:32,243] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:54:32,255] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:54:32,259] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:54:32,260] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:54:32,264] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:54:32,274] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:54:32,275] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:54:32,281] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:54:34,345] INFO "GET /blog/detail/6/ HTTP/1.1" 200 15284
+[2026-04-25 20:54:34,366] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:54:34,366] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:54:34,377] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:54:34,382] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:54:34,387] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:54:35,722] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:54:35,727] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:54:35,728] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:54:35,734] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:54:35,738] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:54:35,751] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:54:35,752] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:54:35,757] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:54:36,557] INFO "GET /blog/detail/5/ HTTP/1.1" 200 18660
+[2026-04-25 20:54:36,577] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:54:36,578] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:54:36,587] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:54:36,590] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:54:36,654] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:54:37,860] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:54:37,871] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:54:37,876] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:54:37,876] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:54:37,881] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:54:37,890] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:54:37,891] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:54:37,895] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:54:41,628] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:54:41,635] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:54:41,639] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:54:41,639] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:54:41,645] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:54:41,658] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:54:41,659] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:54:41,664] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:54:45,135] INFO "GET /blog/pub HTTP/1.1" 200 5093
+[2026-04-25 20:54:45,157] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:54:45,158] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:54:45,174] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:54:45,175] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:54:45,180] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:54:46,309] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:54:46,316] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:54:46,317] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:54:46,322] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 20:54:46,326] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 20:54:46,335] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 20:54:46,336] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 20:54:46,341] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 20:55:30,483] INFO "GET /auth/profile/ HTTP/1.1" 200 20401
+[2026-04-25 20:55:34,829] INFO "GET /auth/profile/ HTTP/1.1" 200 20401
+[2026-04-25 20:57:34,880] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 20:57:34,883] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 20:57:35,509] INFO Watching for file changes with StatReloader
+[2026-04-25 20:57:35,509] INFO Watching for file changes with StatReloader
+[2026-04-25 20:57:43,734] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 20:57:44,338] INFO Watching for file changes with StatReloader
+[2026-04-25 20:57:44,783] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 20:57:45,395] INFO Watching for file changes with StatReloader
+[2026-04-25 20:57:51,410] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 20:57:51,415] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 20:57:52,011] INFO Watching for file changes with StatReloader
+[2026-04-25 20:57:52,011] INFO Watching for file changes with StatReloader
+[2026-04-25 20:57:54,994] INFO F:\Program\Python\liuying\liuyingauth\urls.py changed, reloading.
+[2026-04-25 20:57:55,000] INFO F:\Program\Python\liuying\liuyingauth\urls.py changed, reloading.
+[2026-04-25 20:57:55,606] INFO Watching for file changes with StatReloader
+[2026-04-25 20:57:55,607] INFO Watching for file changes with StatReloader
+[2026-04-25 20:59:48,216] INFO Watching for file changes with StatReloader
+[2026-04-25 20:59:52,188] INFO "GET / HTTP/1.1" 200 15212
+[2026-04-25 20:59:59,722] INFO "GET / HTTP/1.1" 200 15212
+[2026-04-25 21:00:04,433] INFO "GET /blog/detail/4/ HTTP/1.1" 200 20291
+[2026-04-25 21:00:33,482] INFO "GET /blog/detail/4/ HTTP/1.1" 200 20291
+[2026-04-25 21:00:37,750] INFO "GET /blog/detail/1/ HTTP/1.1" 200 16986
+[2026-04-25 21:00:41,643] INFO "GET /blog/detail/4/ HTTP/1.1" 200 20291
+[2026-04-25 21:00:46,290] INFO "GET /blog/detail/4/ HTTP/1.1" 200 20291
+[2026-04-25 21:01:11,586] INFO "GET / HTTP/1.1" 200 15212
+[2026-04-25 21:01:12,936] INFO "GET / HTTP/1.1" 200 15212
+[2026-04-25 21:01:13,230] INFO "GET /static/bootstrap5/popper.min.js HTTP/1.1" 200 20122
+[2026-04-25 21:01:13,231] INFO "GET /static/bootstrap5/bootstrap.min.js HTTP/1.1" 200 60635
+[2026-04-25 21:01:13,237] INFO "GET /static/bootstrap5/bootstrap.min.css HTTP/1.1" 200 232803
+[2026-04-25 21:01:13,246] INFO "GET /static/css/base.css HTTP/1.1" 200 3230
+[2026-04-25 21:01:13,248] INFO "GET /static/image/liuying.jpg HTTP/1.1" 200 365234
+[2026-04-25 21:01:13,261] INFO "GET /media/upload/2026/04/e1a938ca15b241acbfb2480af06a08ef.jpg HTTP/1.1" 200 391428
+[2026-04-25 21:01:13,321] INFO "GET /static/image/logo.png HTTP/1.1" 200 4795118
+[2026-04-25 21:01:13,331] WARNING Not Found: /favicon.ico
+[2026-04-25 21:01:13,332] WARNING "GET /favicon.ico HTTP/1.1" 404 5250
+[2026-04-25 21:02:34,801] INFO "GET / HTTP/1.1" 200 15212
+[2026-04-25 21:02:43,325] INFO "GET / HTTP/1.1" 200 15212
+[2026-04-25 21:02:43,334] INFO "GET /static/css/base.css HTTP/1.1" 200 3230
+[2026-04-25 21:02:43,336] INFO "GET /static/bootstrap5/popper.min.js HTTP/1.1" 200 20122
+[2026-04-25 21:02:43,337] INFO "GET /static/bootstrap5/bootstrap.min.js HTTP/1.1" 200 60635
+[2026-04-25 21:02:43,341] INFO "GET /static/bootstrap5/bootstrap.min.css HTTP/1.1" 200 232803
+[2026-04-25 21:02:43,345] INFO "GET /media/upload/2026/04/e1a938ca15b241acbfb2480af06a08ef.jpg HTTP/1.1" 200 391428
+[2026-04-25 21:02:43,354] INFO "GET /static/image/liuying.jpg HTTP/1.1" 200 365234
+[2026-04-25 21:02:43,410] INFO "GET /static/image/logo.png HTTP/1.1" 200 4795118
+[2026-04-25 21:02:43,420] WARNING Not Found: /favicon.ico
+[2026-04-25 21:02:43,421] WARNING "GET /favicon.ico HTTP/1.1" 404 5250
+[2026-04-25 21:02:48,005] INFO "GET /blog/detail/4/ HTTP/1.1" 200 20508
+[2026-04-25 21:02:53,574] INFO "POST /blog/4/like/ HTTP/1.1" 200 57
+[2026-04-25 21:02:54,099] INFO "POST /blog/4/like/ HTTP/1.1" 200 58
+[2026-04-25 21:03:12,104] INFO "GET /auth/profile/ HTTP/1.1" 200 24650
+[2026-04-25 21:03:17,219] ERROR Internal Server Error: /auth/profile/liuying\u513f\u5b50/
+Traceback (most recent call last):
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "F:\Program\Python\liuying\liuyingauth\views.py", line 217, in user_profile_by_username
+    following = profile_user.profile.following.all()
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 520, in __get__
+    raise self.RelatedObjectDoesNotExist(
+    ...<2 lines>...
+    )
+django.contrib.auth.models.User.profile.RelatedObjectDoesNotExist: User has no profile.
+[2026-04-25 21:03:17,225] ERROR "GET /auth/profile/liuying%E5%84%BF%E5%AD%90/ HTTP/1.1" 500 89930
+[2026-04-25 21:03:35,747] INFO "GET /blog/detail/4/ HTTP/1.1" 200 20508
+[2026-04-25 21:03:37,008] ERROR Internal Server Error: /auth/profile/liuying\u513f\u5b50/
+Traceback (most recent call last):
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "F:\Program\Python\liuying\liuyingauth\views.py", line 217, in user_profile_by_username
+    following = profile_user.profile.following.all()
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 520, in __get__
+    raise self.RelatedObjectDoesNotExist(
+    ...<2 lines>...
+    )
+django.contrib.auth.models.User.profile.RelatedObjectDoesNotExist: User has no profile.
+[2026-04-25 21:03:37,011] ERROR "GET /auth/profile/liuying%E5%84%BF%E5%AD%90/ HTTP/1.1" 500 89930
+[2026-04-25 21:03:39,675] ERROR Internal Server Error: /auth/profile/liuying\u513f\u5b50/
+Traceback (most recent call last):
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "F:\Program\Python\liuying\liuyingauth\views.py", line 217, in user_profile_by_username
+    following = profile_user.profile.following.all()
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 520, in __get__
+    raise self.RelatedObjectDoesNotExist(
+    ...<2 lines>...
+    )
+django.contrib.auth.models.User.profile.RelatedObjectDoesNotExist: User has no profile.
+[2026-04-25 21:03:39,679] ERROR "GET /auth/profile/liuying%E5%84%BF%E5%AD%90/ HTTP/1.1" 500 89930
+[2026-04-25 21:04:38,953] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 21:04:38,960] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 21:04:38,969] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 21:04:39,577] INFO Watching for file changes with StatReloader
+[2026-04-25 21:04:39,583] INFO Watching for file changes with StatReloader
+[2026-04-25 21:04:39,584] INFO Watching for file changes with StatReloader
+[2026-04-25 21:04:45,673] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 21:04:45,722] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 21:04:45,729] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 21:04:46,259] INFO Watching for file changes with StatReloader
+[2026-04-25 21:04:46,306] INFO Watching for file changes with StatReloader
+[2026-04-25 21:04:46,308] INFO Watching for file changes with StatReloader
+[2026-04-25 21:04:52,345] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 21:04:52,376] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 21:04:52,377] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 21:04:52,961] INFO Watching for file changes with StatReloader
+[2026-04-25 21:04:52,991] INFO Watching for file changes with StatReloader
+[2026-04-25 21:04:52,994] INFO Watching for file changes with StatReloader
+[2026-04-25 21:04:59,032] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 21:04:59,121] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 21:04:59,143] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 21:04:59,605] INFO Watching for file changes with StatReloader
+[2026-04-25 21:04:59,683] INFO Watching for file changes with StatReloader
+[2026-04-25 21:04:59,697] INFO Watching for file changes with StatReloader
+[2026-04-25 21:08:16,522] INFO Watching for file changes with StatReloader
+[2026-04-25 21:08:22,891] INFO "GET / HTTP/1.1" 200 15563
+[2026-04-25 21:08:26,259] INFO "GET /auth/profile/liuying/ HTTP/1.1" 302 0
+[2026-04-25 21:08:26,286] INFO "GET /auth/profile/ HTTP/1.1" 200 24650
+[2026-04-25 21:08:29,805] INFO "GET /auth/profile/liuying%E5%84%BF%E5%AD%90/ HTTP/1.1" 200 20764
+[2026-04-25 21:08:35,503] INFO "GET /auth/profile/liuying%E5%84%BF%E5%AD%90/ HTTP/1.1" 200 20764
+[2026-04-25 21:08:37,460] WARNING Not Found: /follow/3/
+[2026-04-25 21:08:37,461] WARNING "POST /follow/3/ HTTP/1.1" 404 5245
+[2026-04-25 21:08:45,263] INFO "GET /blog/detail/4/ HTTP/1.1" 200 20508
+[2026-04-25 21:08:46,643] INFO "GET /auth/profile/liuying%E5%84%BF%E5%AD%90/ HTTP/1.1" 200 20764
+[2026-04-25 21:08:49,894] INFO "GET /auth/profile/liuying%E5%84%BF%E5%AD%90/ HTTP/1.1" 200 20764
+[2026-04-25 21:08:53,755] INFO "GET /auth/profile/liuying%E5%84%BF%E5%AD%90/ HTTP/1.1" 200 20764
+[2026-04-25 21:08:54,796] WARNING Not Found: /follow/3/
+[2026-04-25 21:08:54,797] WARNING "POST /follow/3/ HTTP/1.1" 404 5245
+[2026-04-25 21:09:02,850] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:09:02,851] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:09:02,858] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 21:09:02,863] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:09:02,866] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 21:09:03,765] INFO "GET /auth/profile/liuying%E5%84%BF%E5%AD%90/ HTTP/1.1" 200 20764
+[2026-04-25 21:09:03,790] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:09:03,791] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:09:03,804] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:09:03,823] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 21:09:03,838] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 21:09:05,748] WARNING Not Found: /follow/3/
+[2026-04-25 21:09:05,749] WARNING "POST /follow/3/ HTTP/1.1" 404 5245
+[2026-04-25 21:09:12,058] WARNING Not Found: /follow/3/
+[2026-04-25 21:09:12,059] WARNING "POST /follow/3/ HTTP/1.1" 404 5245
+[2026-04-25 21:09:13,643] WARNING Not Found: /follow/3/
+[2026-04-25 21:09:13,644] WARNING "POST /follow/3/ HTTP/1.1" 404 5245
+[2026-04-25 21:09:16,757] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:09:16,758] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:09:16,768] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:09:16,773] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 21:09:16,777] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 21:09:17,890] INFO "GET /auth/profile/liuying%E5%84%BF%E5%AD%90/ HTTP/1.1" 200 20764
+[2026-04-25 21:09:17,912] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:09:17,913] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:09:17,938] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:09:17,961] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 21:09:17,961] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 21:09:19,607] WARNING Not Found: /follow/3/
+[2026-04-25 21:09:19,608] WARNING "POST /follow/3/ HTTP/1.1" 404 5245
+[2026-04-25 21:12:35,214] INFO "GET /auth/profile/liuying%E5%84%BF%E5%AD%90/ HTTP/1.1" 200 20774
+[2026-04-25 21:12:35,236] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:12:35,237] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:12:35,249] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:12:35,262] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 21:12:35,269] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 21:12:36,428] INFO "POST /auth/follow/3/ HTTP/1.1" 200 92
+[2026-04-25 21:12:41,701] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:12:41,708] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:12:41,709] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:12:41,738] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:12:41,739] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:12:41,744] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:12:42,973] ERROR Internal Server Error: /auth/profile/
+Traceback (most recent call last):
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "F:\Program\Python\liuying\liuyingauth\views.py", line 127, in user_profile
+     return render(request, 'user_profile.html', {
+            ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         'user_blogs': user_blogs,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+         'is_own_profile': True,
+         ^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'user_profile_by_username' with arguments '('',)' not found. 1 pattern(s) tried: ['auth/profile/(?P<username>[^/]+)/\\Z']
+[2026-04-25 21:12:42,983] ERROR "GET /auth/profile/ HTTP/1.1" 500 223754
+[2026-04-25 21:12:43,005] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:12:43,006] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:12:44,849] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:12:44,857] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:12:44,857] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:12:44,881] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:12:44,882] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:12:44,886] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:12:48,324] ERROR Internal Server Error: /auth/profile/
+Traceback (most recent call last):
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "F:\Program\Python\liuying\liuyingauth\views.py", line 127, in user_profile
+     return render(request, 'user_profile.html', {
+            ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         'user_blogs': user_blogs,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+         'is_own_profile': True,
+         ^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'user_profile_by_username' with arguments '('',)' not found. 1 pattern(s) tried: ['auth/profile/(?P<username>[^/]+)/\\Z']
+[2026-04-25 21:12:48,336] ERROR "GET /auth/profile/ HTTP/1.1" 500 223754
+[2026-04-25 21:12:48,360] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:12:48,361] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:12:52,477] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:12:52,484] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:12:52,485] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:12:52,493] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:12:52,494] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:12:52,518] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:12:53,985] INFO "GET /blog/detail/4/ HTTP/1.1" 200 20508
+[2026-04-25 21:12:54,009] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:12:54,011] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:12:54,021] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:12:54,028] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 21:12:54,033] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 21:12:55,137] ERROR Internal Server Error: /auth/profile/liuying\u513f\u5b50/
+Traceback (most recent call last):
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "F:\Program\Python\liuying\liuyingauth\views.py", line 226, in user_profile_by_username
+    return render(request, 'user_profile.html', {
+        'user_blogs': user_blogs,
+    ...<5 lines>...
+        'is_own_profile': False,
+    })
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'user_profile_by_username' with arguments '('',)' not found. 1 pattern(s) tried: ['auth/profile/(?P<username>[^/]+)/\\Z']
+[2026-04-25 21:12:55,143] ERROR "GET /auth/profile/liuying%E5%84%BF%E5%AD%90/ HTTP/1.1" 500 215925
+[2026-04-25 21:12:55,163] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:12:55,164] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:12:56,675] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:12:56,675] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:12:56,680] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:12:56,681] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 21:12:56,686] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 21:12:56,702] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:12:56,703] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:12:56,709] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:12:58,191] INFO "GET /blog/detail/4/ HTTP/1.1" 200 20508
+[2026-04-25 21:12:58,206] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:12:58,207] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:12:58,225] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:12:58,231] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 21:12:58,236] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 21:12:59,587] ERROR Internal Server Error: /auth/profile/
+Traceback (most recent call last):
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "F:\Program\Python\liuying\liuyingauth\views.py", line 127, in user_profile
+     return render(request, 'user_profile.html', {
+            ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         'user_blogs': user_blogs,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+         'is_own_profile': True,
+         ^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'user_profile_by_username' with arguments '('',)' not found. 1 pattern(s) tried: ['auth/profile/(?P<username>[^/]+)/\\Z']
+[2026-04-25 21:12:59,597] ERROR "GET /auth/profile/ HTTP/1.1" 500 223768
+[2026-04-25 21:12:59,617] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:12:59,618] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:13:01,314] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:13:01,317] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:13:01,318] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:13:01,324] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 21:13:01,328] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 21:13:01,343] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:13:01,344] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:13:01,350] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:13:54,139] ERROR Internal Server Error: /auth/profile/liuying\u513f\u5b50/
+Traceback (most recent call last):
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "F:\Program\Python\liuying\liuyingauth\views.py", line 226, in user_profile_by_username
+    return render(request, 'user_profile.html', {
+        'user_blogs': user_blogs,
+    ...<5 lines>...
+        'is_own_profile': False,
+    })
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'user_profile_by_username' with arguments '('',)' not found. 1 pattern(s) tried: ['auth/profile/(?P<username>[^/]+)/\\Z']
+[2026-04-25 21:13:54,145] ERROR "GET /auth/profile/liuying%E5%84%BF%E5%AD%90/ HTTP/1.1" 500 215925
+[2026-04-25 21:13:54,165] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:13:54,167] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:14:10,454] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:14:10,460] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:14:10,461] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:14:10,466] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 21:14:10,470] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 21:14:10,485] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:14:10,487] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:14:10,491] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:14:11,465] ERROR Internal Server Error: /auth/profile/
+Traceback (most recent call last):
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "F:\Program\Python\liuying\liuyingauth\views.py", line 127, in user_profile
+     return render(request, 'user_profile.html', {
+            ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         'user_blogs': user_blogs,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+         'is_own_profile': True,
+         ^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'user_profile_by_username' with arguments '('',)' not found. 1 pattern(s) tried: ['auth/profile/(?P<username>[^/]+)/\\Z']
+[2026-04-25 21:14:11,469] ERROR "GET /auth/profile/ HTTP/1.1" 500 223768
+[2026-04-25 21:14:11,490] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:14:11,491] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:14:13,517] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:14:13,521] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:14:13,522] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:14:13,528] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 21:14:13,532] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 21:14:13,549] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:14:13,550] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:14:13,555] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:16:57,502] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 21:16:58,125] INFO Watching for file changes with StatReloader
+[2026-04-25 21:17:07,090] INFO "GET /blog/detail/4/ HTTP/1.1" 200 20508
+[2026-04-25 21:17:07,107] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:17:07,109] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:17:07,128] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 21:17:07,128] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:17:07,136] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 21:17:08,581] ERROR Internal Server Error: /auth/profile/
+Traceback (most recent call last):
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "F:\Program\Python\liuying\liuyingauth\views.py", line 127, in user_profile
+     return render(request, 'user_profile.html', {
+            ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         'user_blogs': user_blogs,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+         'is_own_profile': True,
+         ^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'user_profile_by_username' with arguments '('',)' not found. 1 pattern(s) tried: ['auth/profile/(?P<username>[^/]+)/\\Z']
+[2026-04-25 21:17:08,607] ERROR "GET /auth/profile/ HTTP/1.1" 500 224001
+[2026-04-25 21:17:08,628] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:17:08,629] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:17:10,094] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:17:10,100] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:17:10,105] WARNING "GET /static/bootstrap5/popper.min.js.map HTTP/1.1" 404 1898
+[2026-04-25 21:17:10,105] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:17:10,110] WARNING "GET /static/bootstrap5/bootstrap.min.js.map HTTP/1.1" 404 1907
+[2026-04-25 21:17:10,125] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-25 21:17:10,126] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5361
+[2026-04-25 21:17:10,131] WARNING "GET /static/bootstrap5/bootstrap.min.css.map HTTP/1.1" 404 1910
+[2026-04-25 21:17:16,079] INFO "GET / HTTP/1.1" 200 15563
+[2026-04-25 21:17:17,479] ERROR Internal Server Error: /auth/profile/
+Traceback (most recent call last):
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "F:\Program\Python\liuying\liuyingauth\views.py", line 127, in user_profile
+     return render(request, 'user_profile.html', {
+            ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         'user_blogs': user_blogs,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+         'is_own_profile': True,
+         ^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'user_profile_by_username' with arguments '('',)' not found. 1 pattern(s) tried: ['auth/profile/(?P<username>[^/]+)/\\Z']
+[2026-04-25 21:17:17,487] ERROR "GET /auth/profile/ HTTP/1.1" 500 223987
+[2026-04-25 21:17:23,484] INFO "GET /auth/profile/liuying/ HTTP/1.1" 302 0
+[2026-04-25 21:17:23,562] ERROR Internal Server Error: /auth/profile/
+Traceback (most recent call last):
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "F:\Program\Python\liuying\liuyingauth\views.py", line 127, in user_profile
+     return render(request, 'user_profile.html', {
+            ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         'user_blogs': user_blogs,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+         'is_own_profile': True,
+         ^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'user_profile_by_username' with arguments '('',)' not found. 1 pattern(s) tried: ['auth/profile/(?P<username>[^/]+)/\\Z']
+[2026-04-25 21:17:23,568] ERROR "GET /auth/profile/ HTTP/1.1" 500 223987
+[2026-04-25 21:17:25,731] ERROR Internal Server Error: /auth/profile/liuying\u513f\u5b50/
+Traceback (most recent call last):
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "F:\Program\Python\liuying\liuyingauth\views.py", line 226, in user_profile_by_username
+    return render(request, 'user_profile.html', {
+        'user_blogs': user_blogs,
+    ...<7 lines>...
+        'is_own_profile': False,
+    })
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'user_profile_by_username' with arguments '('',)' not found. 1 pattern(s) tried: ['auth/profile/(?P<username>[^/]+)/\\Z']
+[2026-04-25 21:17:25,737] ERROR "GET /auth/profile/liuying%E5%84%BF%E5%AD%90/ HTTP/1.1" 500 217434
+[2026-04-25 21:17:33,697] INFO "GET /auth/profile/liuying/ HTTP/1.1" 302 0
+[2026-04-25 21:17:33,793] ERROR Internal Server Error: /auth/profile/
+Traceback (most recent call last):
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "F:\Program\Python\liuying\liuyingauth\views.py", line 127, in user_profile
+     return render(request, 'user_profile.html', {
+            ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         'user_blogs': user_blogs,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+         'is_own_profile': True,
+         ^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'user_profile_by_username' with arguments '('',)' not found. 1 pattern(s) tried: ['auth/profile/(?P<username>[^/]+)/\\Z']
+[2026-04-25 21:17:33,802] ERROR "GET /auth/profile/ HTTP/1.1" 500 223987
+[2026-04-25 21:17:50,696] INFO F:\Program\Python\liuying\liuyingauth\urls.py changed, reloading.
+[2026-04-25 21:17:51,313] INFO Watching for file changes with StatReloader
+[2026-04-25 21:17:58,324] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 21:17:58,898] INFO Watching for file changes with StatReloader
+[2026-04-25 21:18:50,616] INFO "GET /auth/profile/ HTTP/1.1" 200 25443
+[2026-04-25 21:18:59,845] WARNING Not Found: /auth/profile/liuying\u513f\u5b50/
+[2026-04-25 21:18:59,846] WARNING "GET /auth/profile/liuying%E5%84%BF%E5%AD%90/ HTTP/1.1" 404 8158
+[2026-04-25 21:19:05,672] WARNING Not Found: /auth/profile/liuying/
+[2026-04-25 21:19:05,673] WARNING "GET /auth/profile/liuying/ HTTP/1.1" 404 8128
+[2026-04-25 21:19:08,194] WARNING Not Found: /auth/profile/liuying/
+[2026-04-25 21:19:08,195] WARNING "GET /auth/profile/liuying/ HTTP/1.1" 404 8128
+[2026-04-25 21:30:24,490] INFO Watching for file changes with StatReloader
+[2026-04-25 21:30:26,809] INFO "GET / HTTP/1.1" 200 14810
+[2026-04-25 21:30:26,863] INFO "GET /auth/profile/ HTTP/1.1" 302 0
+[2026-04-25 21:31:23,856] ERROR Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\http\request.py", line 205, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[2026-04-25 21:31:23,872] ERROR Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\ProgramSoftware\Miniconda\envs\liuyingblog\Lib\site-packages\django\http\request.py", line 205, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[2026-04-25 21:35:43,674] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 21:35:44,314] INFO Watching for file changes with StatReloader
+[2026-04-25 21:35:58,947] INFO F:\Program\Python\liuying\liuyingauth\views.py changed, reloading.
+[2026-04-25 21:35:59,583] INFO Watching for file changes with StatReloader
+[2026-04-25 21:39:12,980] INFO Watching for file changes with StatReloader
+[2026-04-25 21:39:20,805] INFO "GET / HTTP/1.1" 200 15485
+[2026-04-25 21:39:23,120] INFO "GET /auth/profile/1/ HTTP/1.1" 302 0
+[2026-04-25 21:39:23,144] INFO "GET /auth/profile/ HTTP/1.1" 200 24694
+[2026-04-25 21:39:26,204] INFO "GET /auth/profile/3/ HTTP/1.1" 200 20217
+[2026-04-25 21:39:33,312] INFO "POST /auth/follow/3/ HTTP/1.1" 200 92
+[2026-04-25 21:39:41,197] INFO "GET /auth/profile/1/ HTTP/1.1" 302 0
+[2026-04-25 21:39:41,217] INFO "GET /auth/profile/ HTTP/1.1" 200 25473
+[2026-04-25 21:58:16,540] INFO "GET /auth/profile/1/ HTTP/1.1" 302 0
+[2026-04-25 21:58:16,558] INFO "GET /auth/profile/ HTTP/1.1" 200 25473
+[2026-04-25 21:58:21,210] INFO "GET /auth/profile/3/ HTTP/1.1" 200 21002
+[2026-04-25 21:58:43,422] INFO "GET /blog/detail/7/ HTTP/1.1" 200 19646
+[2026-04-25 22:03:59,061] INFO "GET /auth/profile/ HTTP/1.1" 200 25473
+[2026-04-25 22:04:01,886] INFO "GET /blog/pub HTTP/1.1" 200 5093

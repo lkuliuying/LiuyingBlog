@@ -23,6 +23,11 @@
                     <p class="text-muted small" id="top-email">
                         <i class="bi bi-envelope me-1"></i>{% if user.email %}{{ user.email }}{% else %}未设置邮箱{% endif %}
                     </p>
+                    {% if not is_own_profile %}
+                    <button id="follow-btn" class="btn btn-primary mt-2" data-user-id="{{ user.id }}" data-is-following="{{ is_following|yesno:'true,false' }}">
+                        {% if is_following %}取消关注{% else %}关注{% endif %}
+                    </button>
+                    {% endif %}
                     <div class="d-flex justify-content-center gap-3 mt-3">
                         <div class="text-center">
                             <div class="fw-bold">{{ user_blogs.count }}</div>
@@ -32,6 +37,16 @@
                         <div class="text-center">
                             <div class="fw-bold">{{ user_comments.count }}</div>
                             <small class="text-muted">评论</small>
+                        </div>
+                        <div class="vr"></div>
+                        <div class="text-center">
+                            <div class="fw-bold">{{ following.count }}</div>
+                            <small class="text-muted">关注</small>
+                        </div>
+                        <div class="vr"></div>
+                        <div class="text-center">
+                            <div class="fw-bold">{{ followers.count }}</div>
+                            <small class="text-muted">粉丝</small>
                         </div>
                     </div>
                 </div>
@@ -44,15 +59,25 @@
                 <button class="list-group-item list-group-item-action border-0 py-3" id="pills-comments-tab" data-bs-toggle="pill" data-bs-target="#pills-comments" type="button">
                     <i class="bi bi-chat-dots me-2"></i>我的评论
                 </button>
+                {% if is_own_profile %}
                 <button class="list-group-item list-group-item-action border-0 py-3" id="pills-likes-tab" data-bs-toggle="pill" data-bs-target="#pills-likes" type="button">
                     <i class="bi bi-heart-fill me-2 text-danger"></i>我的点赞
                 </button>
                 <button class="list-group-item list-group-item-action border-0 py-3" id="pills-collections-tab" data-bs-toggle="pill" data-bs-target="#pills-collections" type="button">
                     <i class="bi bi-star-fill me-2 text-warning"></i>我的收藏
                 </button>
+                {% endif %}
+                <button class="list-group-item list-group-item-action border-0 py-3" id="pills-following-tab" data-bs-toggle="pill" data-bs-target="#pills-following" type="button">
+                    <i class="bi bi-person-plus-fill me-2 text-primary"></i>我的关注
+                </button>
+                <button class="list-group-item list-group-item-action border-0 py-3" id="pills-followers-tab" data-bs-toggle="pill" data-bs-target="#pills-followers" type="button">
+                    <i class="bi bi-person-check-fill me-2 text-success"></i>我的粉丝
+                </button>
+                {% if is_own_profile %}
                 <button class="list-group-item list-group-item-action border-0 py-3" id="pills-settings-tab" data-bs-toggle="pill" data-bs-target="#pills-settings" type="button">
                     <i class="bi bi-gear-fill me-2"></i>账号设置
                 </button>
+                {% endif %}
             </div>
         </div>
 
@@ -114,6 +139,46 @@
                         {% endfor %}
                     {% else %}
                         <div class="text-center py-5 text-muted">还没有收藏过文章</div>
+                    {% endif %}
+                </div>
+
+                <div class="tab-pane fade" id="pills-following" role="tabpanel">
+                    <h5 class="mb-4 fw-bold">我的关注</h5>
+                    {% if following %}
+                        {% for profile in following %}
+                        <div class="d-flex align-items-center justify-content-between p-3 mb-2 border rounded">
+                            <div class="d-flex align-items-center">
+                                <img src="{% if profile.avatar %}{{ profile.avatar.url }}{% else %}{% static 'image/liuying.jpg' %}{% endif %}" alt="头像" class="rounded-circle me-2" width="40" height="40">
+                                <div class="text-truncate">
+                                    <a href="{% url 'liuyingauth:user_profile_by_id' profile.user.id %}" class="text-decoration-none text-dark fw-semibold">{{ profile.user.username }}</a>
+                                    <div class="small text-muted">{{ profile.user.email }}</div>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-primary btn-sm unfollow-btn" data-user-id="{{ profile.user.id }}">取消关注</button>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="text-center py-5 text-muted">您还没有关注任何人</div>
+                    {% endif %}
+                </div>
+
+                <div class="tab-pane fade" id="pills-followers" role="tabpanel">
+                    <h5 class="mb-4 fw-bold">我的粉丝</h5>
+                    {% if followers %}
+                        {% for profile in followers %}
+                        <div class="d-flex align-items-center justify-content-between p-3 mb-2 border rounded">
+                            <div class="d-flex align-items-center">
+                                <img src="{% if profile.avatar %}{{ profile.avatar.url }}{% else %}{% static 'image/liuying.jpg' %}{% endif %}" alt="头像" class="rounded-circle me-2" width="40" height="40">
+                                <div class="text-truncate">
+                                    <a href="{% url 'liuyingauth:user_profile_by_id' profile.user.id %}" class="text-decoration-none text-dark fw-semibold">{{ profile.user.username }}</a>
+                                    <div class="small text-muted">{{ profile.user.email }}</div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-sm follow-btn" data-user-id="{{ profile.user.id }}">关注</button>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="text-center py-5 text-muted">还没有任何粉丝</div>
                     {% endif %}
                 </div>
 
@@ -272,6 +337,67 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(() => alert('网络错误'));
         });
     }
+
+    // ================= 4. 关注/取消关注逻辑 =================
+    const followBtn = document.getElementById('follow-btn');
+    if (followBtn) {
+        followBtn.addEventListener('click', function() {
+            const userId = this.getAttribute('data-user-id');
+            const isFollowing = this.getAttribute('data-is-following') === 'true';
+
+            fetch(`/auth/follow/${userId}/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}'
+                }
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.code === 200) {
+                    alert(data.msg);
+                    // 更新按钮状态
+                    followBtn.setAttribute('data-is-following', data.is_following);
+                    followBtn.innerText = data.is_following ? '取消关注' : '关注';
+                } else {
+                    alert(data.msg);
+                }
+            })
+            .catch(() => alert('网络错误'));
+        });
+    }
+
+    // ================= 5. 列表中的关注按钮 =================
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('follow-btn') || e.target.classList.contains('unfollow-btn')) {
+            e.preventDefault();
+            const userId = e.target.getAttribute('data-user-id');
+            const isUnfollow = e.target.classList.contains('unfollow-btn');
+
+            fetch(`/auth/follow/${userId}/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}'
+                }
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.code === 200) {
+                    alert(data.msg);
+                    // 更新按钮
+                    if (data.is_following) {
+                        e.target.className = 'btn btn-outline-primary btn-sm unfollow-btn';
+                        e.target.innerText = '取消关注';
+                    } else {
+                        e.target.className = 'btn btn-primary btn-sm follow-btn';
+                        e.target.innerText = '关注';
+                    }
+                } else {
+                    alert(data.msg);
+                }
+            })
+            .catch(() => alert('网络错误'));
+        }
+    });
 });
 </script>
 {% endblock %}
