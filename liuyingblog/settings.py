@@ -1,11 +1,12 @@
 """
 Django settings for liuyingblog project.
 
-重构为 Vue + DRF 架构：
-- DRF 接管所有业务接口
+Vue + DRF 架构：
+- DRF 接管所有业务接口；管理后台由 admin-frontend (Vue) + adminapi (DRF) 完全承接
 - simplejwt 提供 JWT 认证
 - corsheaders 放行 Vite 开发服务器
-- 模板渲染只保留 Django Admin 自身需要的部分
+- Django Admin / Jazzmin / sessions / messages / staticfiles 已全部移除
+- 模板系统仅保留邮箱验证码邮件渲染所需
 """
 import os
 from datetime import timedelta
@@ -31,13 +32,9 @@ ALLOWED_HOSTS = ['43.163.232.238', 'www.liuying.com', 'liuying.com', '127.0.0.1'
 # Application definition
 # ==========================================
 INSTALLED_APPS = [
-    'jazzmin',
-    'django.contrib.admin',
+    # Django 必要组件（auth/contenttypes 提供 User 模型与外键，迁移不可缺）
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
 
     # 第三方
     'rest_framework',
@@ -55,17 +52,15 @@ MIDDLEWARE = [
     # corsheaders 必须放在 CommonMiddleware 之前
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'liuyingblog.urls'
 
-# Django Admin / Jazzmin 仍然依赖模板系统，所以这块不能删
+# 仅用于 render_to_string 渲染邮箱验证码邮件正文（liuyingauth/templates/...）
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -74,8 +69,6 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
             ],
         },
     },
@@ -112,13 +105,9 @@ USE_TZ = False
 
 
 # ==========================================
-# 静态文件 / 媒体文件
-# 前端构建产物由 Nginx 直接托管，Django 这里只保留 admin 静态资源
+# 媒体文件
+# 前端构建产物由 Nginx 直接托管；Django 已不再提供 admin 自身静态资源
 # ==========================================
-STATIC_URL = 'static/'
-STATICFILES_DIRS = []
-STATIC_ROOT = '/www/wwwroot/liuying/static/'
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -138,15 +127,6 @@ EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
 DEFAULT_FROM_EMAIL = '3302393536@qq.com'
 
 DJANGO_MYSQL_VERSION_CHECK = False
-
-
-# ==========================================
-# Jazzmin 后台
-# ==========================================
-JAZZMIN_SETTINGS_TITLE = "流萤博客管理后台"
-JAZZMIN_SETTINGS_SHOW_CHANGE_LINK = False
-JAZZMIN_SETTINGS_SHOW_VIEW_ON_SITE = False
-JAZZMIN_SETTINGS_DATETIME_FORMAT = 'Y-m-d H:i'
 
 
 # ==========================================
@@ -176,11 +156,13 @@ SIMPLE_JWT = {
 
 
 # ==========================================
-# CORS（开发环境放行 Vite）
+# CORS（开发环境放行两个 Vite 前端）
 # ==========================================
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173',
+    'http://localhost:5173',   # frontend  用户前台
     'http://127.0.0.1:5173',
+    'http://localhost:5174',   # admin-frontend  管理后台
+    'http://127.0.0.1:5174',
 ]
 CORS_ALLOW_CREDENTIALS = True
 
@@ -195,7 +177,7 @@ AUTHENTICATION_BACKENDS = [
 
 
 # ==========================================
-# Redis 缓存 + Session
+# Redis 缓存
 # 本机 Redis：端口 6379，1 号库与其他应用隔离
 # 如果你的 Redis 配了密码，把它放进 .env：REDIS_PASSWORD=xxx
 # 也可以直接用 REDIS_URL=redis://:password@127.0.0.1:6379/1 一把覆盖
@@ -217,7 +199,3 @@ CACHES = {
         },
     },
 }
-
-# Session 也走 Redis，免得每次刷 db.sqlite3
-SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
-SESSION_CACHE_ALIAS = 'default'

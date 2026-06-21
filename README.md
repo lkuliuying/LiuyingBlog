@@ -1,19 +1,19 @@
 # 🌟 流萤博客 (Liuying Blog)
 
-前后端分离的个人博客系统：**Django + DRF** 提供 RESTful API，**Vue 3 + Vite + Element Plus** 构建 SPA。
+前后端分离的个人博客系统：**Django + DRF** 提供 RESTful API，**Vue 3 + Vite + Element Plus** 构建两套独立 SPA —— 一套面向读者/作者的前台，一套面向运营的管理后台。
+
 
 ## 🛠️ 技术栈
 
 ### 后端
 - Python 3.13+
-- Django 6.0
+- Django 6.0（仅作为 ORM / Auth / Middleware 基座；admin / staticfiles / sessions / messages 均已禁用）
 - Django REST Framework
 - djangorestframework-simplejwt（JWT 认证）
 - django-cors-headers / django-filter
-- SQLite（默认）/ Redis（可选缓存）
-- Jazzmin（Django Admin 主题）
+- SQLite（默认）/ Redis（缓存）
 
-### 前端
+### 前端（两个独立项目）
 - Vue 3 + Vite + TypeScript
 - Pinia（状态管理）+ Vue Router 4
 - Element Plus（UI 组件库）
@@ -26,29 +26,41 @@
 ```text
 F:\liuying/
 ├── liuyingblog/      # 项目配置（settings/urls/wsgi/asgi）
-├── blog/             # 博客接口：分类、博客、评论、上传
+├── blog/             # 前台博客接口：分类、博客、评论、上传
 ├── liuyingauth/      # 认证接口：注册、登录、个人中心
-├── frontend/         # Vue 3 SPA（独立 npm 项目）
+├── adminapi/         # 管理后台接口：博客/分类/评论/用户 CRUD + Dashboard
+├── frontend/         # 用户前台 SPA（独立 npm 项目，端口 5173）
+├── admin-frontend/   # 管理后台 SPA（独立 npm 项目，端口 5174，挂在 /manage/）
 ├── media/            # 用户上传文件（头像、博客图片）
-├── static/           # Django Admin / Jazzmin 静态资源
+├── start.sh / .bat   # 一键启停（仅启动后端 + 用户前台 frontend）
+├── stop.sh  / .bat
 ├── manage.py
 └── requirements.txt
 ```
 
+> ⚠️ 一键脚本目前只启动 `frontend/`；`admin-frontend/` 需要按需另开终端启动（见下文）。
+
 ## 🔌 API 总览
 
-所有业务接口统一以 `/api/` 开头：
+所有业务接口统一以 `/api/` 开头，按受众划分为三组：
+
+### 认证 `/api/auth/`
 
 | 路径 | 方法 | 说明 |
 |---|---|---|
-| `/api/auth/register/` | POST | 注册 |
-| `/api/auth/login/` | POST | 登录 → access/refresh + user |
+| `/api/auth/register/` | POST | 注册（需先调 `captcha/` 拿 4 位邮箱验证码） |
+| `/api/auth/login/` | POST | 登录 → `access` / `refresh` + `user` |
 | `/api/auth/refresh/` | POST | 刷新 access token |
 | `/api/auth/captcha/` | POST | 发送邮箱验证码 |
 | `/api/auth/me/` | GET / PATCH | 当前用户信息 + 统计 / 修改用户名邮箱 |
 | `/api/auth/me/password/` | POST | 修改密码 |
 | `/api/auth/me/avatar/` | POST | 上传头像 |
-| `/api/auth/me/blogs|comments|likes|collections/` | GET | 我的列表 |
+| `/api/auth/me/blogs\|comments\|likes\|collections/` | GET | 我的列表 |
+
+### 前台博客 `/api/`
+
+| 路径 | 方法 | 说明 |
+|---|---|---|
 | `/api/blogs/` | GET / POST | 博客列表 / 创建（搜索 `?search=`） |
 | `/api/blogs/{id}/` | GET / PUT / DELETE | 博客详情 / 修改 / 删除 |
 | `/api/blogs/{id}/like/` | POST | 切换点赞 |
@@ -59,15 +71,32 @@ F:\liuying/
 | `/api/comments/{id}/like/` | POST | 切换评论点赞 |
 | `/api/uploads/editor/` | POST | wangEditor 图片/视频上传（需登录） |
 
-写操作均需 `Authorization: Bearer <access_token>`，未登录走 `IsAuthenticatedOrReadOnly`。
+### 管理后台 `/api/admin/`
+
+仅放行 `is_staff=True` 的用户；登录独立维护一套 JWT，与前台用户登录互不影响。
+
+| 路径 | 方法 | 说明 |
+|---|---|---|
+| `/api/admin/auth/login/` | POST | 管理员登录 |
+| `/api/admin/auth/refresh/` | POST | 刷新 token |
+| `/api/admin/auth/me/` | GET | 当前管理员身份 |
+| `/api/admin/dashboard/` | GET | 概览统计：用户/博客/评论计数、近 7 日趋势 |
+| `/api/admin/blogs/` | GET / POST / PUT / DELETE | 博客 CRUD（含批量操作） |
+| `/api/admin/categories/` | GET / POST / PUT / DELETE | 分类管理 |
+| `/api/admin/comments/` | GET / DELETE | 评论审核与删除 |
+| `/api/admin/users/` | GET / PATCH | 用户管理（启停、改角色） |
+
+前台写操作走 `IsAuthenticatedOrReadOnly`；管理后台所有接口走 `IsAdminUser`。
+
+> ❌ `path('admin/', admin.site.urls)` 已从根路由删除，访问 `/admin/` 会 404。如需新建管理员账号，直接用 `python manage.py createsuperuser` 后登录 `/manage/`（admin-frontend）。
 
 ## 🚀 本地启动
 
 > 项目约定虚拟环境目录是 **`.venv/`**（不是 `venv/`），脚本与文档以此为准。
 
-### 0. 一键启动（推荐）
+### 0. 一键启动（推荐 —— 后端 + 用户前台）
 
-仓库根目录已经放好启动脚本，会自动建 `.venv`、装 Python / npm 依赖、跑 migrate，最后并行起两个服务。如果 `.venv` 已经存在但还没装依赖，脚本也会补装。
+仓库根目录的启动脚本会自动建 `.venv`、装 Python / npm 依赖、跑 migrate，然后并行起 Django 后端 + `frontend/` 用户前台。如果 `.venv` 已经存在但还没装依赖，脚本也会补装。
 
 ```cmd
 :: Windows（双击或在 cmd 里运行）
@@ -81,7 +110,8 @@ start.bat
 
 启动后：
 - 后端：http://127.0.0.1:8000
-- 前端：http://localhost:5173 ← 开发请访问这个
+- 用户前台：http://localhost:5173 ← 普通用户开发请访问这个
+- 管理后台：**不在一键脚本里**，按需手动启动（见步骤 3）
 
 首次跑会下载依赖，比较慢；之后再跑就是秒开。脚本会把本次服务进程记录在 `.run/` 下，启动失败时也会自动清理已经拉起的进程。
 
@@ -99,12 +129,14 @@ stop.bat
 
 `start.bat` 会开两个新的 cmd 窗口；除了运行 `stop.bat`，也可以手动关闭这两个窗口。`start.sh` 是前台并行运行，也可以按 `Ctrl+C` 同时停止。
 
-如需创建超级管理员，先 `start` 起服务，再开一个新终端：
+如需创建管理员账号，先 `start` 起服务，再开一个新终端：
 
 ```bash
 .venv\Scripts\activate          # 或 source .venv/bin/activate
 python manage.py createsuperuser
 ```
+
+> 创建出来的超级用户默认 `is_staff=True`，可直接登录 `/manage/`。也可以建一个普通用户后用 `python manage.py shell` 把它的 `is_staff` 改成 `True`，作为运营账号。
 
 ### 1. 手动启动后端
 
@@ -115,26 +147,39 @@ python -m venv .venv
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py createsuperuser
-python manage.py runserver     # http://127.0.0.1:8000
+python manage.py runserver      # http://127.0.0.1:8000
 ```
 
-### 2. 手动启动前端
+### 2. 手动启动用户前台 `frontend/`
 
 ```bash
 cd frontend
 npm install
-npm run dev                    # http://localhost:5173
+npm run dev                     # http://localhost:5173
 ```
 
-`vite.config.ts` 已配 `/api` 与 `/media` 代理到 `127.0.0.1:8000`，开发期不需要额外 CORS 配置。
+`frontend/vite.config.ts` 已配 `/api` 与 `/media` 代理到 `127.0.0.1:8000`，开发期不需要额外 CORS 配置。
 
-### 3. 生产构建
+### 3. 手动启动管理后台 `admin-frontend/`
 
 ```bash
-cd frontend && npm run build   # 生成 frontend/dist/
+cd admin-frontend
+npm install
+npm run dev                     # http://localhost:5174/manage/
 ```
 
-把 `dist/` 交给 Nginx，反向代理 `/api/`、`/media/`、`/admin/` 到 Django/Gunicorn。
+管理后台跑在 **5174 端口**，路径前缀 `/manage/`（由 `vite.config.ts` 的 `base` 决定，与生产部署路径对齐）。同样代理 `/api` 与 `/media` 到 `127.0.0.1:8000`。
+
+首次进入需用 `is_staff=True` 的账号登录，否则 `/api/admin/auth/login/` 会返回 403。
+
+### 4. 生产构建
+
+```bash
+cd frontend       && npm run build      # → frontend/dist/        部署到 /
+cd admin-frontend && npm run build      # → admin-frontend/dist/  部署到 /manage/
+```
+
+把两个 `dist/` 分别交给 Nginx，反向代理 `/api/`、`/media/` 到 Django/Gunicorn（见下方示例）。后端**不需要 collectstatic**——Django Admin 已移除，没有自身静态资源要服务。
 
 ## 🧪 后端验证（curl 速查）
 
@@ -144,7 +189,7 @@ curl -X POST http://127.0.0.1:8000/api/auth/register/ \
   -H "Content-Type: application/json" \
   -d '{"username":"alice","email":"a@b.com","captcha":"1234","password":"123456"}'
 
-# 登录
+# 用户登录
 curl -X POST http://127.0.0.1:8000/api/auth/login/ \
   -H "Content-Type: application/json" \
   -d '{"account":"alice","password":"123456"}'
@@ -154,6 +199,14 @@ curl http://127.0.0.1:8000/api/auth/me/ -H "Authorization: Bearer <ACCESS>"
 
 # 列表
 curl http://127.0.0.1:8000/api/blogs/?search=hello
+
+# 管理员登录
+curl -X POST http://127.0.0.1:8000/api/admin/auth/login/ \
+  -H "Content-Type: application/json" \
+  -d '{"username":"admin","password":"admin123"}'
+
+# Dashboard 概览
+curl http://127.0.0.1:8000/api/admin/dashboard/ -H "Authorization: Bearer <ADMIN_ACCESS>"
 ```
 
 ## 🌐 生产环境 Nginx 示例
@@ -162,12 +215,18 @@ curl http://127.0.0.1:8000/api/blogs/?search=hello
 server {
     listen 80;
     server_name www.liuying.com liuying.com;
-    root /www/wwwroot/liuying/frontend/dist;
     index index.html;
 
-    # 前端 SPA，命中不到的路径回落到 index.html
+    # 用户前台 SPA（根路径）
     location / {
+        root /www/wwwroot/liuying/frontend/dist;
         try_files $uri $uri/ /index.html;
+    }
+
+    # 管理后台 SPA（/manage/）
+    location /manage/ {
+        alias /www/wwwroot/liuying/admin-frontend/dist/;
+        try_files $uri $uri/ /manage/index.html;
     }
 
     # API 反代到 Django
@@ -183,19 +242,10 @@ server {
         alias /www/wwwroot/liuying/media/;
         expires 30d;
     }
-
-    # Django Admin 自身静态
-    location ^~ /admin/ {
-        proxy_pass http://127.0.0.1:8000;
-        proxy_set_header Host $host;
-    }
-
-    location ^~ /static/ {
-        alias /www/wwwroot/liuying/static/;
-        expires 30d;
-    }
 }
 ```
+
+> 旧版本 Nginx 配置里的 `/admin/` 反代和 `/static/` alias 都可以删掉了：前者已 404，后者 Django 不再产出。
 
 ## 📄 许可证
 
@@ -203,4 +253,4 @@ MIT License。
 
 ---
 
-*重构时间：2026-06-20。*
+*最后更新：2026-06-21（移除 Django Admin，切换到 admin-frontend + adminapi）。*

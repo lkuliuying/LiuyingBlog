@@ -1,12 +1,10 @@
-"""项目根 URL：所有业务接口聚到 /api/，admin 与 media 保持原状。"""
+"""项目根 URL：所有业务接口统一在 /api/ 下，Django Admin 已移除，改由 admin-frontend (Vue) 承接。"""
 from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import RedirectView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('api/admin/', include('adminapi.urls')),
     path('api/', include('blog.urls')),
     path('api/auth/', include('liuyingauth.urls')),

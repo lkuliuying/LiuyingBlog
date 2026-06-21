@@ -15,9 +15,6 @@ djangorestframework-simplejwt==5.3.1
 django-cors-headers==4.4.0
 django-filter==24.3
 
-# 后台 Admin 主题
-django-jazzmin==3.0.0
-
 # 环境变量
 python-dotenv==1.0.1
 
