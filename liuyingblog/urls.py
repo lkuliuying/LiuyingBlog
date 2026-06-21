@@ -1,35 +1,20 @@
-"""
-URL configuration for liuyingblog project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/6.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
-from django.urls import path,include
+"""项目根 URL：所有业务接口聚到 /api/，admin 与 media 保持原状。"""
 from django.conf import settings
 from django.conf.urls.static import static
-
+from django.contrib import admin
+from django.urls import include, path
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    path('',include('blog.urls')),
-
-    path('auth/',include('liuyingauth.urls')),
-    
+    path('api/admin/', include('adminapi.urls')),
+    path('api/', include('blog.urls')),
+    path('api/auth/', include('liuyingauth.urls')),
 ]
 
-
-# ★ 新增：开发环境下映射媒体文件URL
+# 媒体文件：开发环境直接由 Django 托管；生产环境交给 Nginx
 if settings.DEBUG:
+    urlpatterns += [
+        path('', RedirectView.as_view(url='http://localhost:5173/', permanent=False)),
+    ]
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

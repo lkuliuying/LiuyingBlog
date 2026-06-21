@@ -4,6 +4,7 @@ db.sqlite3.backup
 
 # 运行进程与本地配置
 .idea/
+.run/
 uwsgi.pid
 my.cnf
 
@@ -13,3 +14,62 @@ media/
 # Python 缓存文件 (常规忽略)
 __pycache__/
 *.pyc
+
+# 虚拟环境
+.venv/
+venv/
+
+# 前端构建产物（实际位于 frontend/.gitignore 已忽略，这里兜底）
+frontend/node_modules/
+frontend/dist/
+admin-frontend/node_modules/
+admin-frontend/dist/
+
+# 前端自动生成的类型声明
+frontend/auto-imports.d.ts
+frontend/components.d.ts
+admin-frontend/auto-imports.d.ts
+admin-frontend/components.d.ts
+
+# Claude Code / Agent 工作目录
+.agents/
+
+# Python 缓存与构建产物
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# 测试覆盖率
+.coverage
+htmlcov/
+
+# Django collectstatic 产物
+staticfiles/
+
+# 本地覆盖配置
+local_settings.py
+
+# 编辑器与系统垃圾文件
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+*.bak
+
+# 日志
+*.log
+logs/
+
+# 设计参考图
+homepage-cyan-silver.png
+homepage-cyan-silver-mobile.png
+publish-page-option-2-reference.png
+reference-csdn-layout.png
+
+# 敏感信息
+.env

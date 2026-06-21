@@ -1,0 +1,8 @@
+from django.apps import AppConfig
+
+
+class AdminApiConfig(AppConfig):
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "adminapi"
+    verbose_name = "管理后台接口"
+
