@@ -1,0 +1,8 @@
+1.API 认证机制升级：
+  目前 DRF API 看起来是只读的（获取列表），如果未来要通过 API 发博文或点赞，建议引入 djangorestframework-simplejwt 实现 Token 认证，替代当前的 Session 认证，更适合小程序/App。
+2.异步任务队列：
+  目前邮箱验证码是同步发送的（发邮件时用户得干等），可以引入 Celery + Redis（你已经装了Redis）做异步发送，体验会丝滑很多。
+3.数据库平滑迁移预案：
+  虽然 SQLite 够用，但在高并发写入（比如被爬虫狂刷评论）时可能会锁库。建议保持当前架构，但在 settings.py 中预留基于环境变量的一键切换 MySQL/PostgreSQL 的配置。
+4.日志与监控：
+  生产环境中，建议配置 Django 的 Logging 模块，将报错信息按天滚动写入文件，方便以后排查线上暗病。
