@@ -99,3 +99,38 @@ class AdminApiTests(APITestCase):
         self.user.refresh_from_db()
         self.assertTrue(self.user.is_staff)
 
+    def test_staff_can_delete_normal_user(self):
+        user = User.objects.create_user(
+            username="disposable",
+            password="test-password",
+        )
+        self.client.force_authenticate(self.staff)
+
+        response = self.client.delete(f"/api/admin/users/{user.pk}/")
+
+        self.assertEqual(response.status_code, 204)
+        self.assertFalse(User.objects.filter(pk=user.pk).exists())
+
+    def test_admin_cannot_delete_self(self):
+        self.client.force_authenticate(self.staff)
+
+        response = self.client.delete(f"/api/admin/users/{self.staff.pk}/")
+
+        self.assertEqual(response.status_code, 400)
+        self.assertTrue(User.objects.filter(pk=self.staff.pk).exists())
+
+    def test_only_superuser_can_delete_staff_user(self):
+        other_staff = User.objects.create_user(
+            username="other-editor",
+            password="test-password",
+            is_staff=True,
+        )
+        self.client.force_authenticate(self.staff)
+        response = self.client.delete(f"/api/admin/users/{other_staff.pk}/")
+        self.assertEqual(response.status_code, 403)
+        self.assertTrue(User.objects.filter(pk=other_staff.pk).exists())
+
+        self.client.force_authenticate(self.superuser)
+        response = self.client.delete(f"/api/admin/users/{other_staff.pk}/")
+        self.assertEqual(response.status_code, 204)
+        self.assertFalse(User.objects.filter(pk=other_staff.pk).exists())

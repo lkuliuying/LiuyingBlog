@@ -110,6 +110,9 @@ export const adminApi = {
     const { data } = await http.patch<AdminUser>(`/admin/users/${id}/`, payload)
     return data
   },
+  deleteUser(id: number) {
+    return http.delete(`/admin/users/${id}/`)
+  },
   async uploadImage(file: File, onProgress?: (percent: number) => void) {
     const form = new FormData()
     form.append('file', file)

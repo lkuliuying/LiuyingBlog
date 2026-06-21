@@ -236,6 +236,7 @@ class AdminUserViewSet(
     mixins.ListModelMixin,
     mixins.RetrieveModelMixin,
     mixins.UpdateModelMixin,
+    mixins.DestroyModelMixin,
     viewsets.GenericViewSet,
 ):
     serializer_class = AdminUserSerializer
@@ -272,3 +273,10 @@ class AdminUserViewSet(
         if next_staff != target.is_staff and not self.request.user.is_superuser:
             raise PermissionDenied("只有超级管理员可以调整后台权限")
         serializer.save()
+
+    def perform_destroy(self, instance):
+        if instance.pk == self.request.user.pk:
+            raise ValidationError({"detail": "不能删除当前登录的管理员账号"})
+        if instance.is_staff and not self.request.user.is_superuser:
+            raise PermissionDenied("只有超级管理员可以删除其他管理员账号")
+        instance.delete()

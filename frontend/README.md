@@ -16,7 +16,7 @@ npm run dev      # http://localhost:5173
 npm run build    # 输出到 dist/
 ```
 
-生产环境用 Nginx 把 `dist/` 当作静态站点托管，并把 `/api/`、`/media/`、`/admin/` 反向代理到 Django。
+生产环境用 Nginx 把 `dist/` 作为根路径静态站点，并把 `/api/`、`/media/` 交给 Django。管理后台由 `admin-frontend/dist/` 独立部署到 `/manage/`，Django Admin 已停用。
 
 ## 目录约定
 

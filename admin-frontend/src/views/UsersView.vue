@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, reactive, ref } from 'vue'
-import { Edit, Refresh, Search, UserFilled, View } from '@element-plus/icons-vue'
+import { Delete, Edit, Refresh, Search, UserFilled, View } from '@element-plus/icons-vue'
 import { ElMessage, ElMessageBox, type FormInstance, type FormRules } from 'element-plus'
 
 import { adminApi } from '@/api/admin'
@@ -95,6 +95,28 @@ async function toggleActive(user: AdminUser) {
   }
 }
 
+function canDelete(user: AdminUser) {
+  if (user.id === auth.user?.id) return false
+  return !user.is_staff || Boolean(auth.user?.is_superuser)
+}
+
+async function remove(user: AdminUser) {
+  const relatedContent = `${user.blog_count} 篇博客和 ${user.comment_count} 条评论`
+  await ElMessageBox.confirm(
+    `确定删除用户“${user.username}”吗？该用户的 ${relatedContent} 也会被一并删除，此操作不可恢复。`,
+    '删除用户',
+    {
+      confirmButtonText: '确认删除',
+      cancelButtonText: '取消',
+      type: 'warning',
+    },
+  )
+  await adminApi.deleteUser(user.id)
+  ElMessage.success('用户已删除')
+  if (rows.value.length === 1 && filters.page > 1) filters.page -= 1
+  await load()
+}
+
 onMounted(load)
 </script>
 
@@ -152,10 +174,11 @@ onMounted(load)
             <el-switch :model-value="row.is_active" :disabled="row.id === auth.user?.id" @change="toggleActive(row)" />
           </template>
         </el-table-column>
-        <el-table-column label="操作" fixed="right" width="130" align="right">
+        <el-table-column label="操作" fixed="right" width="190" align="right">
           <template #default="{ row }">
             <el-button link :icon="View" @click="showDetail(row)">查看</el-button>
             <el-button link type="primary" :icon="Edit" @click="openEdit(row)">编辑</el-button>
+            <el-button v-if="canDelete(row)" link type="danger" :icon="Delete" @click="remove(row)">删除</el-button>
           </template>
         </el-table-column>
       </el-table>

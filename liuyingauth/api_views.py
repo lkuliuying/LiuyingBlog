@@ -13,10 +13,10 @@
 - /api/auth/me/likes/      GET 我点赞过的博客
 - /api/auth/me/collections/ GET 我收藏的博客
 """
-import os
 import random
 import string
 
+from django.conf import settings
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.utils import timezone
@@ -93,7 +93,7 @@ class CaptchaView(APIView):
             send_mail(
                 subject='流萤博客注册验证码',
                 message=plain_message,
-                from_email=os.getenv('EMAIL_HOST_USER', '3302393536@qq.com'),
+                from_email=settings.DEFAULT_FROM_EMAIL,
                 recipient_list=[email],
                 fail_silently=False,
                 html_message=html_message,

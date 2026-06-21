@@ -24,7 +24,7 @@
 ## 📂 顶层目录
 
 ```text
-F:\liuying/
+项目根目录/
 ├── liuyingblog/      # 项目配置（settings/urls/wsgi/asgi）
 ├── blog/             # 前台博客接口：分类、博客、评论、上传
 ├── liuyingauth/      # 认证接口：注册、登录、个人中心
@@ -32,13 +32,17 @@ F:\liuying/
 ├── frontend/         # 用户前台 SPA（独立 npm 项目，端口 5173）
 ├── admin-frontend/   # 管理后台 SPA（独立 npm 项目，端口 5174，挂在 /manage/）
 ├── media/            # 用户上传文件（头像、博客图片）
-├── start.sh / .bat   # 一键启停（仅启动后端 + 用户前台 frontend）
-├── stop.sh  / .bat
+├── start-user.bat    # Windows：后端 + 用户前台
+├── start-admin.bat   # Windows：后端 + 管理后台
+├── start-stack.ps1   # Windows 共用启动逻辑（自动复用已运行的后端）
+├── start.bat         # 兼容入口：后端 + 用户前台
+├── start.sh          # Linux/macOS：后端 + 用户前台
+├── stop.bat/.sh      # 停止由脚本启动的服务
 ├── manage.py
 └── requirements.txt
 ```
 
-> ⚠️ 一键脚本目前只启动 `frontend/`；`admin-frontend/` 需要按需另开终端启动（见下文）。
+`media/`、SQLite 数据库、`.env`、虚拟环境和前端构建产物均为本地运行数据，已通过 `.gitignore` 排除。
 
 ## 🔌 API 总览
 
@@ -94,40 +98,63 @@ F:\liuying/
 
 > 项目约定虚拟环境目录是 **`.venv/`**（不是 `venv/`），脚本与文档以此为准。
 
-### 0. 一键启动（推荐 —— 后端 + 用户前台）
+### 0. 配置环境变量
 
-仓库根目录的启动脚本会自动建 `.venv`、装 Python / npm 依赖、跑 migrate，然后并行起 Django 后端 + `frontend/` 用户前台。如果 `.venv` 已经存在但还没装依赖，脚本也会补装。
+首次启动前可复制示例配置：
 
-```cmd
-:: Windows（双击或在 cmd 里运行）
-start.bat
+```powershell
+Copy-Item .env.example .env
 ```
 
 ```bash
-# Linux / macOS / git-bash
-./start.sh
+cp .env.example .env
 ```
 
-启动后：
-- 后端：http://127.0.0.1:8000
-- 用户前台：http://localhost:5173 ← 普通用户开发请访问这个
-- 管理后台：**不在一键脚本里**，按需手动启动（见步骤 3）
+至少应在生产环境中设置安全的 `DJANGO_SECRET_KEY`、关闭 `DJANGO_DEBUG`，并填写邮件和 Redis 配置。`.env` 不应提交到 Git。
 
-首次跑会下载依赖，比较慢；之后再跑就是秒开。脚本会把本次服务进程记录在 `.run/` 下，启动失败时也会自动清理已经拉起的进程。
+### 1. Windows 一键启动（推荐）
+
+脚本会自动创建 `.venv`、安装或更新 Python/npm 依赖、执行数据库迁移，并启动所选前端。后端已经健康运行时会直接复用，不会重复占用 8000 端口。
+
+```cmd
+:: 用户前台 + Django 后端
+start-user.bat
+
+:: 管理后台 + Django 后端
+start-admin.bat
+```
+
+兼容旧用法的 `start.bat` 仍会启动 Django 后端和用户前台，但不会复用已占用的端口；日常开发优先使用上面的两个入口。
+
+启动后：
+
+- 后端：http://127.0.0.1:8000
+- 用户前台：http://localhost:5173
+- 管理后台：http://localhost:5174/manage/
+
+需要同时开发两套前端时，先运行 `start-user.bat`，再运行 `start-admin.bat`；第二个脚本会复用已经启动的 Django 后端。
 
 一键停止：
 
 ```cmd
-:: Windows
 stop.bat
 ```
 
+### 2. Linux / macOS 一键启动
+
 ```bash
-# Linux / macOS / git-bash
+./start.sh
+```
+
+该脚本启动 Django 后端和用户前台。管理后台可按下文的手动方式另行启动。
+
+一键停止：
+
+```bash
 ./stop.sh
 ```
 
-`start.bat` 会开两个新的 cmd 窗口；除了运行 `stop.bat`，也可以手动关闭这两个窗口。`start.sh` 是前台并行运行，也可以按 `Ctrl+C` 同时停止。
+首次运行会下载依赖，耗时相对较长；后续启动会明显更快。脚本将服务 PID 记录在 `.run/`，该目录不会提交到 Git。
 
 如需创建管理员账号，先 `start` 起服务，再开一个新终端：
 
@@ -138,7 +165,7 @@ python manage.py createsuperuser
 
 > 创建出来的超级用户默认 `is_staff=True`，可直接登录 `/manage/`。也可以建一个普通用户后用 `python manage.py shell` 把它的 `is_staff` 改成 `True`，作为运营账号。
 
-### 1. 手动启动后端
+### 3. 手动启动后端
 
 ```bash
 python -m venv .venv
@@ -150,7 +177,7 @@ python manage.py createsuperuser
 python manage.py runserver      # http://127.0.0.1:8000
 ```
 
-### 2. 手动启动用户前台 `frontend/`
+### 4. 手动启动用户前台 `frontend/`
 
 ```bash
 cd frontend
@@ -160,7 +187,7 @@ npm run dev                     # http://localhost:5173
 
 `frontend/vite.config.ts` 已配 `/api` 与 `/media` 代理到 `127.0.0.1:8000`，开发期不需要额外 CORS 配置。
 
-### 3. 手动启动管理后台 `admin-frontend/`
+### 5. 手动启动管理后台 `admin-frontend/`
 
 ```bash
 cd admin-frontend
@@ -172,7 +199,7 @@ npm run dev                     # http://localhost:5174/manage/
 
 首次进入需用 `is_staff=True` 的账号登录，否则 `/api/admin/auth/login/` 会返回 403。
 
-### 4. 生产构建
+### 6. 生产构建
 
 ```bash
 cd frontend       && npm run build      # → frontend/dist/        部署到 /
@@ -253,4 +280,4 @@ MIT License。
 
 ---
 
-*最后更新：2026-06-21（移除 Django Admin，切换到 admin-frontend + adminapi）。*
+*最后更新：2026-06-21（同步 Windows 双前端启动方式、环境变量说明与仓库忽略规则）。*
