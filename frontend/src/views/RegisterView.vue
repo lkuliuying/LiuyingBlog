@@ -16,7 +16,7 @@ const form = reactive({ username: '', email: '', captcha: '', password: '' })
 const rules: FormRules = {
   username: [{ required: true, message: '用户名不能为空', trigger: 'blur' }, { min: 2, max: 20, message: '用户名长度 2-20 位', trigger: 'blur' }],
   email: [{ required: true, message: '邮箱不能为空', trigger: 'blur' }, { type: 'email', message: '邮箱格式不正确', trigger: 'blur' }],
-  captcha: [{ required: true, message: '验证码不能为空', trigger: 'blur' }, { len: 4, message: '验证码必须是 4 位', trigger: 'blur' }],
+  captcha: [{ required: true, message: '验证码不能为空', trigger: 'blur' }, { len: 6, message: '验证码必须是 6 位', trigger: 'blur' }],
   password: [{ required: true, message: '密码不能为空', trigger: 'blur' }, { min: 6, max: 20, message: '密码长度 6-20 位', trigger: 'blur' }],
 }
 async function sendCaptcha() {
@@ -57,7 +57,7 @@ async function submit() {
       </div>
       <el-form-item label="邮箱验证码" prop="captcha">
         <div class="captcha-row">
-          <el-input v-model="form.captcha" :prefix-icon="Key" placeholder="请输入 4 位验证码" size="large" />
+          <el-input v-model="form.captcha" :prefix-icon="Key" placeholder="请输入 6 位验证码" size="large" />
           <el-button class="captcha-button" :loading="captchaSending" :disabled="!form.email || cooldown > 0" @click="sendCaptcha">{{ cooldown > 0 ? `${cooldown}s` : '获取验证码' }}</el-button>
         </div>
       </el-form-item>
