@@ -4,6 +4,7 @@ from rest_framework import serializers
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from blog.models import Blog, BlogCategory, BlogComment
+from blog.sanitizers import sanitize_html
 
 
 User = get_user_model()
@@ -122,9 +123,11 @@ class AdminBlogSerializer(serializers.ModelSerializer):
         return value
 
     def validate_content(self, value):
-        if len(strip_tags(value or "").strip()) < 10:
+        # 管理后台编辑博客同样走净化，避免绕过前台校验注入 XSS
+        cleaned = sanitize_html(value)
+        if len(strip_tags(cleaned).strip()) < 10:
             raise serializers.ValidationError("正文至少需要 10 个字符")
-        return value
+        return cleaned
 
     def create(self, validated_data):
         validated_data.setdefault("author", self.context["request"].user)

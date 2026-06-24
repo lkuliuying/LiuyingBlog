@@ -10,6 +10,7 @@ from django.utils.html import strip_tags
 from rest_framework import serializers
 
 from .models import Blog, BlogCategory, BlogComment
+from .sanitizers import sanitize_html
 
 
 class BlogCategorySerializer(serializers.ModelSerializer):
@@ -113,6 +114,14 @@ class BlogCreateSerializer(serializers.ModelSerializer):
         model = Blog
         fields = ['id', 'title', 'content', 'category']
         read_only_fields = ['id']
+
+    def validate_content(self, value):
+        # 服务端净化，杜绝存储型 XSS；前后端都靠 v-html 渲染，必须在写库前过滤
+        return sanitize_html(value)
+
+    def validate_title(self, value):
+        # 标题不渲染 HTML，剥掉所有标签
+        return strip_tags(value or '').strip()
 
 
 class BlogCommentSerializer(_AuthorMixin, serializers.ModelSerializer):

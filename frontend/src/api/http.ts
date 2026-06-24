@@ -44,12 +44,31 @@ http.interceptors.response.use(
       }
     }
 
-    // 提取后端给的提示
+    // 提取后端给的提示：优先 detail；否则把字段错误数组拍平拼接
     const data = error.response?.data
     if (data && typeof data === 'object') {
       const detail = (data as any).detail
-        ?? Object.values(data).flat().filter(Boolean).join('；')
-      if (detail) ElMessage.error(String(detail))
+      if (detail) {
+        ElMessage.error(String(detail))
+      } else {
+        const messages: string[] = []
+        for (const value of Object.values(data)) {
+          if (typeof value === 'string') {
+            messages.push(value)
+          } else if (Array.isArray(value)) {
+            for (const item of value) {
+              if (item) messages.push(String(item))
+            }
+          } else if (value && typeof value === 'object') {
+            for (const inner of Object.values(value as Record<string, unknown>)) {
+              if (inner) messages.push(String(inner))
+            }
+          } else if (value) {
+            messages.push(String(value))
+          }
+        }
+        if (messages.length) ElMessage.error(messages.join('；'))
+      }
     }
     return Promise.reject(error)
   },

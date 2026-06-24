@@ -2,6 +2,7 @@
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { ElMessage, ElMessageBox } from 'element-plus'
+import DOMPurify from 'dompurify'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/github-dark.min.css'
 
@@ -20,6 +21,11 @@ const comments = ref<Comment[]>([])
 const newComment = ref('')
 
 const blogId = computed(() => route.params.id as string)
+
+// 后端已用 bleach 净化，前端再用 DOMPurify 兜底，防止历史脏数据
+const sanitizedContent = computed(() =>
+  blog.value ? DOMPurify.sanitize(blog.value.content, { USE_PROFILES: { html: true } }) : '',
+)
 
 async function loadBlog() {
   blog.value = await blogApi.detail(blogId.value)
@@ -95,7 +101,7 @@ onMounted(() => {
       <el-tag v-if="blog.category" round size="small" class="category">{{ blog.category.name }}</el-tag>
     </div>
 
-    <div class="blog-content" v-html="blog.content"></div>
+    <div class="blog-content" v-html="sanitizedContent"></div>
 
     <div class="actions">
       <el-button :type="blog.is_liked ? 'primary' : 'default'" round @click="toggleLike">

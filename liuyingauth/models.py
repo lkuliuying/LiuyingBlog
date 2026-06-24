@@ -5,9 +5,18 @@ User = get_user_model()
 
 # Create your models here.
 class CaptchaModel(models.Model):
-    email = models.EmailField(unique= True)
-    captcha = models.CharField(max_length=4)
-    created_time = models.DateTimeField(auto_now=True)
+    email = models.EmailField(unique=True)
+    captcha = models.CharField(max_length=6)
+    # 首次生成时间，用于判断 5 分钟有效期（不随重发更新）
+    created_time = models.DateTimeField(auto_now_add=True)
+    # 最近一次发送时间，用于 60s 重发节流
+    last_sent_at = models.DateTimeField(auto_now=True)
+    # 连续校验失败次数，达到阈值后锁定，需重新获取
+    failed_attempts = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        verbose_name = '邮箱验证码'
+        verbose_name_plural = verbose_name
     
 
 class UserProfile(models.Model):

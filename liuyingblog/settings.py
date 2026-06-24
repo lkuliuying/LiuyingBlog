@@ -23,9 +23,25 @@ load_dotenv(os.path.join(BASE_DIR, '.env'))
 # ==========================================
 # 基础配置
 # ==========================================
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'fallback-secret-key-for-local-dev')
-DEBUG = os.getenv('DJANGO_DEBUG') == 'True'
-ALLOWED_HOSTS = ['43.163.232.238', 'www.liuying.com', 'liuying.com', '127.0.0.1', 'localhost']
+# DEBUG 默认 True 方便本地开发；生产环境必须在 .env 显式写 DJANGO_DEBUG=False。
+# 显式写 'true'/'false'（不区分大小写）会覆盖默认值。
+_debug_env = os.getenv('DJANGO_DEBUG', '').lower()
+DEBUG = _debug_env == 'true' if _debug_env else True
+
+# 生产环境（DEBUG=False）必须显式提供 SECRET_KEY，否则直接报错，
+# 避免误用 fallback 密钥上线。
+_FALLBACK_SECRET = 'fallback-secret-key-for-local-dev'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', _FALLBACK_SECRET)
+if not DEBUG and (SECRET_KEY == _FALLBACK_SECRET or not SECRET_KEY):
+    raise RuntimeError(
+        '生产环境必须在 .env 中设置 DJANGO_SECRET_KEY，'
+        '不能使用 fallback 密钥。'
+    )
+
+# ALLOWED_HOSTS 支持环境变量覆盖，逗号分隔
+_default_hosts = ['43.163.232.238', 'www.liuying.com', 'liuying.com', '127.0.0.1', 'localhost']
+_env_hosts = [h.strip() for h in os.getenv('ALLOWED_HOSTS', '').split(',') if h.strip()]
+ALLOWED_HOSTS = _env_hosts or _default_hosts
 
 
 # ==========================================
@@ -53,7 +69,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # API 走 JWT Bearer 认证，不使用 session cookie，CSRF 中间件已移除
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -100,7 +116,9 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'zh-hans'
 TIME_ZONE = 'Asia/Shanghai'
 USE_I18N = True
-USE_TZ = False
+# 启用时区感知时间戳：所有 DateTimeField 存 UTC，展示时按 TIME_ZONE 转换，
+# 避免 naive 本地时间在服务器换时区或数据迁移时出错。
+USE_TZ = True
 
 
 # ==========================================
@@ -145,6 +163,15 @@ REST_FRAMEWORK = {
         'rest_framework.filters.SearchFilter',
         'rest_framework.filters.OrderingFilter',
     ),
+    # 节流：按 IP 限制匿名调用，主要保护 /captcha/ 与 /register/
+    'DEFAULT_THROTTLE_CLASSES': (
+        'rest_framework.throttling.AnonRateThrottle',
+    ),
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '120/min',
+        'captcha': '5/min',
+        'register': '10/min',
+    },
 }
 
 SIMPLE_JWT = {
@@ -163,7 +190,8 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:5174',   # admin-frontend  管理后台
     'http://127.0.0.1:5174',
 ]
-CORS_ALLOW_CREDENTIALS = True
+# 前后端均通过 Bearer Token 认证，不依赖 cookie，因此不需要允许凭据。
+CORS_ALLOW_CREDENTIALS = False
 
 
 # ==========================================

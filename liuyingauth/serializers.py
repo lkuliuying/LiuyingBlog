@@ -42,10 +42,10 @@ class RegisterSerializer(serializers.Serializer):
         'required': '邮箱不能为空',
         'invalid': '邮箱格式不正确',
     })
-    captcha = serializers.CharField(min_length=4, max_length=4, error_messages={
+    captcha = serializers.CharField(min_length=4, max_length=6, error_messages={
         'required': '验证码不能为空',
-        'min_length': '验证码长度不能小于4',
-        'max_length': '验证码长度不能大于4',
+        'min_length': '验证码长度不正确',
+        'max_length': '验证码长度不正确',
     })
     password = serializers.CharField(min_length=6, max_length=20, write_only=True, error_messages={
         'required': '密码不能为空',
@@ -66,12 +66,30 @@ class RegisterSerializer(serializers.Serializer):
     def validate(self, attrs):
         captcha = attrs.get('captcha')
         email = attrs.get('email')
-        record = CaptchaModel.objects.filter(email=email, captcha=captcha).first()
+        record = CaptchaModel.objects.filter(email=email).first()
         if not record:
-            raise serializers.ValidationError({'captcha': '验证码错误或邮箱不存在'})
+            raise serializers.ValidationError({'captcha': '请先获取验证码'})
+
+        # 5 分钟有效期
         if (timezone.now() - record.created_time).total_seconds() > 5 * 60:
             record.delete()
             raise serializers.ValidationError({'captcha': '验证码已过期，请重新获取'})
+
+        # 失败次数锁定：连续 5 次错误后必须重新获取
+        if record.failed_attempts >= 5:
+            record.delete()
+            raise serializers.ValidationError({'captcha': '错误次数过多，请重新获取验证码'})
+
+        if record.captcha != captcha:
+            record.failed_attempts += 1
+            record.save(update_fields=['failed_attempts'])
+            remaining = 5 - record.failed_attempts
+            if remaining <= 0:
+                record.delete()
+                raise serializers.ValidationError({'captcha': '错误次数过多，请重新获取验证码'})
+            raise serializers.ValidationError({'captcha': f'验证码错误，剩余尝试次数 {remaining} 次'})
+
+        # 校验通过，删除验证码记录
         record.delete()
         return attrs
 

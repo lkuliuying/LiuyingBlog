@@ -11,6 +11,7 @@
 - Django REST Framework
 - djangorestframework-simplejwt（JWT 认证）
 - django-cors-headers / django-filter
+- bleach（富文本内容净化，防存储型 XSS）
 - SQLite（默认）/ Redis（缓存）
 
 ### 前端（两个独立项目）
@@ -19,6 +20,7 @@
 - Element Plus（UI 组件库）
 - axios（带 JWT 拦截 / 自动刷新 token）
 - @wangeditor/editor-for-vue（富文本）
+- DOMPurify（详情页 v-html 兜底净化）
 - highlight.js（详情页代码高亮）
 
 ## 📂 顶层目录
@@ -52,10 +54,10 @@
 
 | 路径 | 方法 | 说明 |
 |---|---|---|
-| `/api/auth/register/` | POST | 注册（需先调 `captcha/` 拿 4 位邮箱验证码） |
+| `/api/auth/register/` | POST | 注册（需先调 `captcha/` 拿 6 位邮箱验证码；同一邮箱连续 5 次错码后需重新获取） |
 | `/api/auth/login/` | POST | 登录 → `access` / `refresh` + `user` |
 | `/api/auth/refresh/` | POST | 刷新 access token |
-| `/api/auth/captcha/` | POST | 发送邮箱验证码 |
+| `/api/auth/captcha/` | POST | 发送邮箱验证码（同邮箱 60s 限发，同 IP 5 次/分钟） |
 | `/api/auth/me/` | GET / PATCH | 当前用户信息 + 统计 / 修改用户名邮箱 |
 | `/api/auth/me/password/` | POST | 修改密码 |
 | `/api/auth/me/avatar/` | POST | 上传头像 |
@@ -73,7 +75,7 @@
 | `/api/comments/?blog=ID` | GET | 该博客的顶层评论树 |
 | `/api/comments/` | POST | 发表评论（含 `parent` 回复） |
 | `/api/comments/{id}/like/` | POST | 切换评论点赞 |
-| `/api/uploads/editor/` | POST | wangEditor 图片/视频上传（需登录） |
+| `/api/uploads/editor/` | POST | wangEditor 图片/视频上传（需登录；图片走 Pillow magic-byte 校验） |
 
 ### 管理后台 `/api/admin/`
 
@@ -93,6 +95,8 @@
 前台写操作走 `IsAuthenticatedOrReadOnly`；管理后台所有接口走 `IsAdminUser`。
 
 > ❌ `path('admin/', admin.site.urls)` 已从根路由删除，访问 `/admin/` 会 404。如需新建管理员账号，直接用 `python manage.py createsuperuser` 后登录 `/manage/`（admin-frontend）。
+>
+> ⚠️ 非 staff 账号调用 `/api/admin/auth/login/` 会返回 **400** `{"detail":"该账号没有管理后台权限"}`。
 
 ## 🚀 本地启动
 
@@ -111,6 +115,8 @@ cp .env.example .env
 ```
 
 至少应在生产环境中设置安全的 `DJANGO_SECRET_KEY`、关闭 `DJANGO_DEBUG`，并填写邮件和 Redis 配置。`.env` 不应提交到 Git。
+
+> 生产部署强约束：当 `DJANGO_DEBUG=False` 时，如果 `DJANGO_SECRET_KEY` 仍是默认 fallback 或为空，后端会直接 `RuntimeError` 拒绝启动，避免误用弱密钥上线。`DEBUG` 在未设置环境变量时默认 `True`（方便本地开发），生产环境**必须**显式写 `DJANGO_DEBUG=False`。
 
 ### 1. Windows 一键启动（推荐）
 
@@ -197,7 +203,7 @@ npm run dev                     # http://localhost:5174/manage/
 
 管理后台跑在 **5174 端口**，路径前缀 `/manage/`（由 `vite.config.ts` 的 `base` 决定，与生产部署路径对齐）。同样代理 `/api` 与 `/media` 到 `127.0.0.1:8000`。
 
-首次进入需用 `is_staff=True` 的账号登录，否则 `/api/admin/auth/login/` 会返回 403。
+首次进入需用 `is_staff=True` 的账号登录，否则 `/api/admin/auth/login/` 会返回 400 `{"detail":"该账号没有管理后台权限"}`。
 
 ### 6. 生产构建
 
@@ -211,10 +217,10 @@ cd admin-frontend && npm run build      # → admin-frontend/dist/  部署到 /m
 ## 🧪 后端验证（curl 速查）
 
 ```bash
-# 注册（先调 /api/auth/captcha/ 拿到 4 位验证码）
+# 注册（先调 /api/auth/captcha/ 拿到 6 位验证码）
 curl -X POST http://127.0.0.1:8000/api/auth/register/ \
   -H "Content-Type: application/json" \
-  -d '{"username":"alice","email":"a@b.com","captcha":"1234","password":"123456"}'
+  -d '{"username":"alice","email":"a@b.com","captcha":"123456","password":"123456"}'
 
 # 用户登录
 curl -X POST http://127.0.0.1:8000/api/auth/login/ \
@@ -274,10 +280,23 @@ server {
 
 > 旧版本 Nginx 配置里的 `/admin/` 反代和 `/static/` alias 都可以删掉了：前者已 404，后者 Django 不再产出。
 
+## 🔒 安全设计
+
+| 维度 | 措施 |
+|---|---|
+| 密钥 | 生产环境（`DJANGO_DEBUG=False`）未配置 `DJANGO_SECRET_KEY` 直接拒绝启动 |
+| DEBUG | 默认 `True` 仅用于本地；生产必须在 `.env` 写 `DJANGO_DEBUG=False` |
+| 认证 | 全站 Bearer JWT，不使用 session cookie；CSRF 中间件已移除；`CORS_ALLOW_CREDENTIALS=False` |
+| 富文本 XSS | 博客正文在 `BlogCreateSerializer` / `AdminBlogSerializer` 写库前用 bleach 净化（标签/属性/CSS/协议白名单），前端 `BlogDetailView` 再用 DOMPurify 兜底 |
+| 验证码 | 6 位数字；同邮箱 60s 限发、5 分钟内不重新生成、连续 5 次错码锁定；同 IP 5 次/分钟 |
+| 注册接口 | 同 IP 10 次/分钟，防止验证码爆破 |
+| 上传 | 图片走 Pillow `verify()` 做 magic-byte 校验；图片 ≤10MB、视频 ≤100MB；文件名 `uuid.hex.ext` |
+| 时区 | `USE_TZ=True`，时间戳以 UTC 存储，避免服务器换时区导致数据错乱 |
+
 ## 📄 许可证
 
 MIT License。
 
 ---
 
-*最后更新：2026-06-21（同步 Windows 双前端启动方式、环境变量说明与仓库忽略规则）。*
+*最后更新：2026-06-24（安全加固：密钥/DEBUG 强约束、富文本 bleach 净化、验证码频控与失败锁定、上传 magic-byte 校验、CSRF/CORS/时区修正）。*

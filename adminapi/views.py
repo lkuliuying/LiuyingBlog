@@ -170,9 +170,11 @@ class AdminBlogViewSet(viewsets.ModelViewSet):
     @action(detail=False, methods=["post"], url_path="bulk-delete")
     def bulk_delete(self, request):
         ids = parse_ids(request)
-        count = self.get_queryset().filter(pk__in=ids).count()
-        self.get_queryset().filter(pk__in=ids).delete()
-        return Response({"deleted": count})
+        queryset = self.get_queryset().filter(pk__in=ids)
+        existing_ids = set(queryset.values_list("pk", flat=True))
+        missing = sorted(set(ids) - existing_ids)
+        deleted, _ = queryset.delete()
+        return Response({"deleted": deleted, "missing": missing})
 
 
 class AdminCategoryViewSet(viewsets.ModelViewSet):
@@ -185,7 +187,7 @@ class AdminCategoryViewSet(viewsets.ModelViewSet):
 
     def destroy(self, request, *args, **kwargs):
         category = self.get_object()
-        if category.blog_set.exists():
+        if Blog.objects.filter(category=category).exists():
             return Response(
                 {"detail": "该分类下仍有博客，请先调整博客分类"},
                 status=status.HTTP_400_BAD_REQUEST,
@@ -227,9 +229,11 @@ class AdminCommentViewSet(
     @action(detail=False, methods=["post"], url_path="bulk-delete")
     def bulk_delete(self, request):
         ids = parse_ids(request)
-        count = self.get_queryset().filter(pk__in=ids).count()
-        self.get_queryset().filter(pk__in=ids).delete()
-        return Response({"deleted": count})
+        queryset = self.get_queryset().filter(pk__in=ids)
+        existing_ids = set(queryset.values_list("pk", flat=True))
+        missing = sorted(set(ids) - existing_ids)
+        deleted, _ = queryset.delete()
+        return Response({"deleted": deleted, "missing": missing})
 
 
 class AdminUserViewSet(

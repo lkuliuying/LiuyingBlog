@@ -18,11 +18,13 @@ import string
 
 from django.conf import settings
 from django.core.mail import send_mail
+from django.db import transaction
 from django.template.loader import render_to_string
 from django.utils import timezone
 from rest_framework import generics, status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
+from rest_framework.throttling import AnonRateThrottle
 from rest_framework.views import APIView
 
 from blog.models import Blog, BlogComment
@@ -39,8 +41,19 @@ from .serializers import (
 )
 
 
+class CaptchaRateThrottle(AnonRateThrottle):
+    """按 IP 限制验证码请求频率，防止邮件炸弹。"""
+    scope = 'captcha'
+
+
+class RegisterRateThrottle(AnonRateThrottle):
+    """按 IP 限制注册尝试频率，防止验证码爆破。"""
+    scope = 'register'
+
+
 class RegisterView(APIView):
     permission_classes = [AllowAny]
+    throttle_classes = [RegisterRateThrottle]
 
     def post(self, request):
         serializer = RegisterSerializer(data=request.data)
@@ -64,22 +77,51 @@ class LoginView(APIView):
 
 class CaptchaView(APIView):
     """发送邮件验证码。
-    频控：同一邮箱 60s 内不能重复发。
+
+    频控三道闸：
+    1) 同一邮箱 60s 内不能重复发（按 last_sent_at）；
+    2) 同一邮箱 5 分钟内验证码不重新生成（重发只是把当前码再发一次）；
+    3) 同一 IP 5 次/分钟（CaptchaRateThrottle）。
     """
     permission_classes = [AllowAny]
+    throttle_classes = [CaptchaRateThrottle]
 
     def post(self, request):
         email = request.data.get('email') or request.query_params.get('email')
         if not email:
             return Response({'detail': '邮箱不能为空'}, status=status.HTTP_400_BAD_REQUEST)
 
-        record = CaptchaModel.objects.filter(email=email).first()
-        if record and (timezone.now() - record.created_time).total_seconds() < 60:
-            return Response({'detail': '验证码发送太频繁，请 60 秒后再试'},
-                            status=status.HTTP_429_TOO_MANY_REQUESTS)
+        now = timezone.now()
+        with transaction.atomic():
+            record = (
+                CaptchaModel.objects
+                .select_for_update()
+                .filter(email=email)
+                .first()
+            )
 
-        captcha = ''.join(random.sample(string.digits, 4))
-        CaptchaModel.objects.update_or_create(email=email, defaults={'captcha': captcha})
+            if record:
+                # 60s 重发节流，按最近一次发送时间判断
+                if (now - record.last_sent_at).total_seconds() < 60:
+                    return Response(
+                        {'detail': '验证码发送太频繁，请 60 秒后再试'},
+                        status=status.HTTP_429_TOO_MANY_REQUESTS,
+                    )
+                # 5 分钟内复用同一验证码；过期则生成新的并重置失败计数
+                if (now - record.created_time).total_seconds() > 5 * 60:
+                    record.captcha = ''.join(random.choices(string.digits, k=6))
+                    record.created_time = now
+                    record.failed_attempts = 0
+                record.last_sent_at = now
+                record.save()
+                captcha = record.captcha
+            else:
+                captcha = ''.join(random.choices(string.digits, k=6))
+                CaptchaModel.objects.create(
+                    email=email,
+                    captcha=captcha,
+                    last_sent_at=now,
+                )
 
         try:
             plain_message = (

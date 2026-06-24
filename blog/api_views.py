@@ -126,8 +126,13 @@ class BlogCommentViewSet(viewsets.ModelViewSet):
         if blog_id:
             qs = qs.filter(blog_id=blog_id)
         if self.action == 'list':
-            # 列表只给顶层评论，replies 由序列化器内部递归展开
-            qs = qs.filter(parent__isnull=True)
+            # 列表只给顶层评论，replies 由序列化器内部递归展开；
+            # 预取 replies/likes 避免 N+1 + N*M 查询
+            qs = qs.filter(parent__isnull=True).prefetch_related(
+                'likes',
+                'replies__author',
+                'replies__likes',
+            )
         return qs.order_by('-pub_time')
 
     def perform_create(self, serializer):
@@ -156,36 +161,67 @@ class EditorUploadView(APIView):
     permission_classes = [IsAuthenticated]
     parser_classes = [MultiPartParser, FormParser]
 
-    ALLOWED_EXTS = {'jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp'}
-    ALLOWED_CONTENT_TYPES = {
+    ALLOWED_IMAGE_EXTS = {'jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp'}
+    ALLOWED_IMAGE_CONTENT_TYPES = {
         'image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/bmp',
     }
-    MAX_SIZE = 10 * 1024 * 1024
+    ALLOWED_VIDEO_EXTS = {'mp4', 'webm', 'ogv'}
+    ALLOWED_VIDEO_CONTENT_TYPES = {'video/mp4', 'video/webm', 'video/ogg'}
+    MAX_IMAGE_SIZE = 10 * 1024 * 1024
+    MAX_VIDEO_SIZE = 100 * 1024 * 1024
 
     def post(self, request):
         upload = request.FILES.get('file')
         if not upload:
             return Response(
-                {'errno': 1, 'message': '没有接收到图片文件'},
+                {'errno': 1, 'message': '没有接收到上传文件'},
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
         ext = upload.name.rsplit('.', 1)[-1].lower() if '.' in upload.name else ''
-        if ext not in self.ALLOWED_EXTS:
+        is_image = ext in self.ALLOWED_IMAGE_EXTS
+        is_video = ext in self.ALLOWED_VIDEO_EXTS
+        if not (is_image or is_video):
             return Response(
-                {'errno': 1, 'message': f'不支持的图片格式：.{ext or "未知"}'},
+                {'errno': 1, 'message': f'不支持的文件格式：.{ext or "未知"}'},
                 status=status.HTTP_400_BAD_REQUEST,
             )
-        if upload.content_type not in self.ALLOWED_CONTENT_TYPES:
-            return Response(
-                {'errno': 1, 'message': '文件内容不是受支持的图片格式'},
-                status=status.HTTP_400_BAD_REQUEST,
-            )
-        if upload.size > self.MAX_SIZE:
-            return Response(
-                {'errno': 1, 'message': '图片大小不能超过 10MB'},
-                status=status.HTTP_400_BAD_REQUEST,
-            )
+
+        if is_image:
+            if upload.content_type not in self.ALLOWED_IMAGE_CONTENT_TYPES:
+                return Response(
+                    {'errno': 1, 'message': '文件内容不是受支持的图片格式'},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+            if upload.size > self.MAX_IMAGE_SIZE:
+                return Response(
+                    {'errno': 1, 'message': '图片大小不能超过 10MB'},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+            # 用 Pillow 实际解码一次，按 magic byte 验证是真图片，
+            # 防止重命名 .exe → .jpg 之类的伪装上传
+            try:
+                from PIL import Image
+                upload.seek(0)
+                with Image.open(upload) as img:
+                    img.verify()
+                upload.seek(0)
+            except Exception:
+                return Response(
+                    {'errno': 1, 'message': '图片文件已损坏或不是真正的图片'},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+        else:
+            if upload.content_type not in self.ALLOWED_VIDEO_CONTENT_TYPES:
+                return Response(
+                    {'errno': 1, 'message': '文件内容不是受支持的视频格式'},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+            if upload.size > self.MAX_VIDEO_SIZE:
+                return Response(
+                    {'errno': 1, 'message': '视频大小不能超过 100MB'},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
 
         new_filename = f'{uuid.uuid4().hex}.{ext}'
         date_path = timezone.now().strftime('%Y/%m')

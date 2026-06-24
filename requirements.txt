@@ -1,39 +1,38 @@
 # ============================================
-# 流萤博客 - Python 依赖包
-# 适配 Python 3.13 / 虚拟环境目录 .venv/
-# 最后更新: 2026-06-20
+# LiuyingBlog - Python Dependencies
+# Python 3.13 / venv: .venv/
+# Updated: 2026-06-20
 # ============================================
 
-# Django 主体
+# Django
 Django==6.0.3
 
 # DRF + JWT
 djangorestframework==3.15.1
 djangorestframework-simplejwt==5.3.1
 
-# 前后端分离配套
+# CORS + Filter
 django-cors-headers==4.4.0
 django-filter==24.3
 
-# 环境变量
+# HTML sanitization (blog/comment content)
+bleach[css]==6.1.0
+
+# Env
 python-dotenv==1.0.1
 
-# 图片处理（UserProfile.avatar 等 ImageField 必需）
-# Python 3.13 必须用 11.x 起步，10.x 没有 cp313 wheel 会回落到源码编译失败
+# Image (UserProfile.avatar ImageField)
+# Python 3.13 requires Pillow 11.x+
 Pillow>=11.0.0,<12.0.0
 
-# Redis 缓存 / Session（settings.py 已启用，必装）
+# Redis
 django-redis==5.4.0
 redis==5.0.4
 
-# ============================================
-# 可选依赖（按需取消注释）
-# ============================================
-# mysqlclient==2.2.8        # MySQL 驱动
+# Optional (uncomment as needed)
+# mysqlclient==2.2.8
 
-# ============================================
-# 开发工具（按需取消注释）
-# ============================================
+# Dev tools (uncomment as needed)
 # pytest==8.0.0
 # pytest-django==4.8.0
 # black==24.2.0
